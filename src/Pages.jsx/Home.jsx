@@ -3,6 +3,9 @@ import Nav from '../Components/Nav'
 import Landing from '../Components/Landing'
 import BurgerMenu from '../Components/BurgerMenu'
 import Piñatas from '../Components/Piñatas'
+import Themes from '../Components/Themes'
+import Garlands from '../Components/Garlands'
+import Decorations from '../Components/Decorations'
 
 function Home() {
   return (
@@ -11,6 +14,9 @@ function Home() {
     <BurgerMenu />
     <Landing/>
     <Piñatas/>
+    <Themes/>
+    <Garlands/>
+    <Decorations/>
     </>
 
   )
