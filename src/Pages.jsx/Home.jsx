@@ -6,6 +6,7 @@ import Piñatas from '../Components/Piñatas'
 import Themes from '../Components/Themes'
 import Garlands from '../Components/Garlands'
 import Decorations from '../Components/Decorations'
+import Footer from '../Components/Footer'
 
 function Home() {
   return (
@@ -17,6 +18,7 @@ function Home() {
     <Themes/>
     <Garlands/>
     <Decorations/>
+    <Footer/>
     </>
 
   )
