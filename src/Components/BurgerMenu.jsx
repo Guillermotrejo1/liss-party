@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGem, faTimes } from "@fortawesome/free-solid-svg-icons";
@@ -46,3 +45,8 @@ function BurgerMenu() {
 }
 
 export default BurgerMenu;
+
+// need to fix bugs with burger menu
+// 1. when the backdrop is clicked i must have the diamond removed from screen
+// 2. see how i can open and close menu with useState
+// 3. choose if i want that backdrop design or change it

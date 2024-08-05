@@ -14,6 +14,21 @@ function Landing() {
             <div className="diamond"></div>
             <div className="diamond__amethyst"></div>
           </div>
+          <div className="header__intro">
+            <div className="intro__wrapper">
+              <h1 className="intro__title">Hi My name is Lisseth</h1>
+              <p className="intro__text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae
+                deserunt laboriosam consectetur magni corrupti, assumenda
+                quisquam, ipsa eos itaque debitis, molestiae ullam dolor labore
+                alias commodi animi iure dolorum doloribus!
+              </p>
+              <button className="requests">Let's create</button>
+            </div>
+            <figure className="img__wrapper">
+              <img className="jem__img" src="logo512.png" alt="" />
+            </figure>
+          </div>
         </div>
       </header>
     </section>

@@ -9,6 +9,7 @@
 .nav__links {
   display: flex;
   justify-content: space-around;
+  display: none;
 }
 
 .nav__list {
@@ -58,12 +59,54 @@ header {
   text-shadow: 0 0 1px black;
 }
 
+.header__intro {
+  width: 100%;
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+}
+
+.intro__wrapper{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.img_wrapper{
+  width: 50%;
+}
+
+.intro__title {
+  font-size: 48px;
+  font-weight: 700;
+  color: lightpink;
+  text-shadow: 0 0 1px black;
+  text-align: center;
+}
+
+.intro__text {
+  font-size: 24px;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.requests {
+  cursor: pointer;
+  font-size: 24px;
+  padding: 12px 8px;
+  border-radius: 9999px;
+  margin-top: 40px;
+  width: 200px;
+  align-self: center;
+}
+
+/* gotta fix the centering of the diamonds */
+
 .diamond__wrapper {
   display: flex;
   justify-content: center;
+  align-items: center;
   justify-content: space-evenly;
-  max-width: 1280px;
-  margin: 20px 0 0 60px;
 }
 
 .diamond {
@@ -76,7 +119,7 @@ header {
   width: 50px;
   box-sizing: content-box;
   position: relative;
-  margin: 20px 0 50px 0;
+  margin: 20px 60px 50px 0;
   animation: rotating 2s infinite linear;
 }
 
@@ -203,7 +246,9 @@ header {
   color: #c7b8ea;
   right: 50px;
   top: 20px;
+  cursor: pointer;
 }
+
 
 .menu__links {
   display: flex;

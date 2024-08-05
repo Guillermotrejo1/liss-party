@@ -8,10 +8,15 @@
 
 html, body {
   background-color: lavender;
+  overflow-x: hidden;
 }
 
 :root {
   --diamond-color: rgba(43, 43, 43, 0.3);
+}
+
+button {
+  cursor: pointer;
 }
 
 /* /**lavender, kightPink, black *
