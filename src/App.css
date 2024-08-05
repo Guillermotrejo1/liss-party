@@ -66,13 +66,13 @@ header {
   justify-content: center;
 }
 
-.intro__wrapper{
+.intro__wrapper {
   display: flex;
   flex-direction: column;
   width: 50%;
 }
 
-.img_wrapper{
+.img_wrapper {
   width: 50%;
 }
 
@@ -98,6 +98,26 @@ header {
   margin-top: 40px;
   width: 200px;
   align-self: center;
+}
+
+.display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.display__text {
+  font-weight: 700;
+  color: lightpink;
+  text-shadow: 0 0 1px black;
+  font-size: 24px;
+  align-items: center;
+}
+
+.arrow {
+  font-size: 50px;
+  margin-top: 12px;
 }
 
 /* gotta fix the centering of the diamonds */
@@ -249,7 +269,6 @@ header {
   cursor: pointer;
 }
 
-
 .menu__links {
   display: flex;
   flex-direction: column;
@@ -258,4 +277,44 @@ header {
 
 .menu__list {
   padding: 4px;
+}
+
+/* PINATAS */
+
+#Piñatas {
+  margin-top: 100px;
+  width: 100%;
+  min-height: 600px;
+}
+
+.pinata__title{
+  margin-bottom: 40px;
+}
+
+.card__container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card__row {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  width: calc(100%/ 2);
+}
+
+.card__wrapper {
+  display: flex;
+  justify-content: center;
+  height: 600px;
+  
+}
+
+.card {
+  width: 600px;
+  height: 500px;
+  background-color: #f4f4f4;
+  border: 4px solid #c7b8ea;
 }

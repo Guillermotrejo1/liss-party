@@ -1,3 +1,5 @@
+import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 
 function Landing() {
@@ -28,6 +30,14 @@ function Landing() {
             <figure className="img__wrapper">
               <img className="jem__img" src="logo512.png" alt="" />
             </figure>
+          </div>
+          <div className="display">
+            <p className="display__text">
+              Here's a display of some of my work
+            </p>
+            <div className="arrow">
+              <FontAwesomeIcon icon={faArrowDown} />
+            </div>
           </div>
         </div>
       </header>
