@@ -323,6 +323,7 @@ header {
 
 footer {
   background-color: lightpink;
+  opacity: 0.7;
 }
 .footer__container {
  width: 100%;
@@ -352,6 +353,12 @@ footer {
   text-decoration: none;
   padding: 0 12px;
   color: #fff;
+}
+
+.footer__link:hover {
+  color: #c7b8ea;
+  text-shadow: 0 0 1px black;
+  font-weight: 700;
 }
 
 .footer__copyright {
