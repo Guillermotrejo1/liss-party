@@ -116,8 +116,25 @@ header {
 }
 
 .arrow {
+  position: absolute;
   font-size: 50px;
-  margin-top: 12px;
+  bottom: -130px;
+  color: #c7b8ea;
+  animation: bounce 1s infinite;
+}
+
+/* need to make the arrow show on mount */
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 /* gotta fix the centering of the diamonds */
