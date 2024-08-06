@@ -359,6 +359,10 @@ header {
   left: 47%;
 }
 
+.link__btn:hover {
+  border: 2px solid lightpink;
+}
+
 /* find a better way to fit the btn in the middle instead of using position absolute */
 
 /* FOOTER */
