@@ -9,10 +9,9 @@ function Themes() {
           <div className="header__title pinata__title">Themes</div>
         </div>
         <div className="card__container">
-          <Card imageUrl="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQ33K5MMH8TZ2z9uXGamHXX6H-dAIRrNTKi8DYcICdfqLAWsQv0FwEHCzyYlkQ9gWuRwpfszaBjzfOOebsTstodThw-1G7pUK4IDQsAkrQbwwOu8SUZulVGZwz7XQ&usqp=CAc" text="card1"/>
-          <Card imageUrl="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQ33K5MMH8TZ2z9uXGamHXX6H-dAIRrNTKi8DYcICdfqLAWsQv0FwEHCzyYlkQ9gWuRwpfszaBjzfOOebsTstodThw-1G7pUK4IDQsAkrQbwwOu8SUZulVGZwz7XQ&usqp=CAc" text="card2"/>
-          <Card imageUrl="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQ33K5MMH8TZ2z9uXGamHXX6H-dAIRrNTKi8DYcICdfqLAWsQv0FwEHCzyYlkQ9gWuRwpfszaBjzfOOebsTstodThw-1G7pUK4IDQsAkrQbwwOu8SUZulVGZwz7XQ&usqp=CAc" text="card3"/>
-          <Card imageUrl="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQ33K5MMH8TZ2z9uXGamHXX6H-dAIRrNTKi8DYcICdfqLAWsQv0FwEHCzyYlkQ9gWuRwpfszaBjzfOOebsTstodThw-1G7pUK4IDQsAkrQbwwOu8SUZulVGZwz7XQ&usqp=CAc" text="card4"/>
+          <Card imageUrl="https://lh3.googleusercontent.com/pw/AP1GczPcNsuvM9llDjsPBNqqjsaSHo_fYYqlnduGh7oz622HG1Fewm_0dlM39-gUKbSM0DpqpqcfUCN-r2jxW6s5iBgjTLadrYZACiW5FSCtsYSv9r0HxheDWhtmpd2rnYufVNJY8_srYIW0bcJrz07AOot8Cw=w776-h1033-s-no-gm?authuser=0" text="card1"/>
+          <button className="link__btn">See More</button>
+          <Card imageUrl="https://lh3.googleusercontent.com/pw/AP1GczPzY1hEBbPGPS3QJ5r_ut1_neqAEJfYXzZIJbhP8SfyLG4Phl0eg7m3va1tgv2oqW40AJRlGvBk3w_nMt-p77sVM80WD4dD9KobU6Ky3pFS3df2t9FEuu3N4eclzlrRHqe4z4muHbnpkdB5rvOWBFOFKw=w776-h1033-s-no-gm?authuser=0" text="card2"/>
         </div>
       </div>
     </section>

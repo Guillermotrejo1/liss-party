@@ -9,7 +9,7 @@ function Nav() {
                 <li className='nav__list'>Themes</li>
                 <li className='nav__list'>Garlands</li>
                 <li className='nav__list'>Decorations</li>
-                <li className='nav__list'>About</li>
+                <li className='nav__list'>Shirts</li>
             </ul>
         </div>
     </nav>

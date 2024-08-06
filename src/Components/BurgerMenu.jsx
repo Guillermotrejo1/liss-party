@@ -35,7 +35,7 @@ function BurgerMenu() {
               <Link to="/Decorations"></Link>Decorations
             </li>
             <li className="nav__list menu__list">
-              <Link to="/About"></Link>About
+              <Link to="/About"></Link>Shirts
             </li>
           </ul>
         </div>

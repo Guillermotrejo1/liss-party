@@ -311,7 +311,6 @@ header {
 .card__container {
   width: 100%;
   display: flex;
-  flex-wrap: wrap;
 }
 
 .card__row {
@@ -332,8 +331,22 @@ header {
 .card {
   width: 600px;
   height: 500px;
-  background-color: #f4f4f4;
+  background-color: lightpink;
   border: 4px solid #c7b8ea;
+}
+
+.card__img--wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.card__img {
+  width: 450px;
+}
+
+.link__btn {
+  width: 200px;
 }
 
 /* FOOTER */

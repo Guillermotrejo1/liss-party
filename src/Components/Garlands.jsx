@@ -9,10 +9,9 @@ function Garlands() {
           <div className="header__title pinata__title">Garlands</div>
         </div>
         <div className="card__container">
-          <Card imageUrl="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTTHyTMUtCqf1TwYStyZGwgQ_6Z7LIRpdMPm4PCU1GtMxwxfrqHVQW118Y46JiVdqgrg2HjDWBiGpQqxruAifxbOzW9jwKbYlKP7OpNutn7nQ8" text="card1"/>
-          <Card imageUrl="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcS0TgxNmmRNgGZEZ_whonwEP1E5MU_ChxmLMdiR5nHNnIPxqYn1YNfUMJOTycliXwZX0TtoAXvLBUjYJ66ZXTWU3FH3oJFh868lnl9qHhE" text="card2"/>
-          <Card imageUrl="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTPL-sZryuWs1ANvsOLUnDfvsUqC7ic-wpnBNDXt4ILcPAupefCA9tlQYtR32KWZr7N2Aw5WYEi9z5AOmRX3xIl6tUYDul88igptfGqxqvDUQzj6N385VvSdNjh6w&usqp=CAc" text="card3"/>
-          <Card imageUrl="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSHQD0bnzpedBCIYO0sUoryNmqOS05YMFfktMgxxNz6lxQXwhBvpaOeFmPDOVu1x43GjDAudJ2VYoe1ZAyTUzOqxHHttnnTwtQ3a0uW51nByUk0sH0D78NqxBkQMQYEGiP-c-NdaXk&usqp=CAc" text="card4"/>
+          <Card imageUrl="https://lh3.googleusercontent.com/pw/AP1GczOs5QwXbvZ91uFm3roHiYuVg9EmppqpiIJ75t93uKzdrOCZWLUvmimlo9uK3aC-XjXn5YD145koJon-mPyUt5x32X0jVxpSZmNt4RSsRcLEEV8-ZqtUx6J-Endh941Ph36D1JYIdX7YwpPdO_AJyF9SDA=w1835-h1033-s-no-gm?authuser=0" text="card1"/>
+          <button className="link__btn">See More</button>
+          <Card imageUrl="https://lh3.googleusercontent.com/pw/AP1GczNnrXevhjan36mTvaKGsqvOd2Cv1KQw_OzjPy2uOzvmAzrFNLI9hSV4vW-cj7H6S2mIxGv1x7qWmnVowsW8IR7HraPNyNTykH2wQIrZYk7GdqGbuuyGIEk8w_mxTIeP4zP41atIc6t_tK_56H5CLQR-Qw=w581-h1033-s-no-gm?authuser=0" text="card2"/>
         </div>
       </div>
     </section>
