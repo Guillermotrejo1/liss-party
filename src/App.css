@@ -241,8 +241,8 @@ header {
 /* BANNER */
 
 .banner {
-  background-color: #f0f0f0;
-  padding: 20px;
+  background-color: #c7b8ea;
+  padding: 60px;
   text-align: center;
 }
 
@@ -396,8 +396,9 @@ footer {
 }
 
 .footer__img {
-  width: 150px;
+  width: 400px;
   margin-top: 28px;
+  background-color: transparent;
 }
 
 .footer__list {

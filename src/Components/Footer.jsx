@@ -1,4 +1,5 @@
 import React from 'react'
+import myLogo from "../assets/jem2.png"
 
 function Footer() {
   return (
@@ -6,7 +7,7 @@ function Footer() {
         <div className="footer_container">
             <div className="footer__row">
                 <figure className="footer__logo--wrapper">
-                    <img src="logo192.png" alt="" className="footer__img" />
+                    <img src={myLogo} alt="" className="footer__img" />
                 </figure>
                 <div className="footer__list">
                 <a href="/" className='footer__link'>Home</a>
