@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 
 function Footer() {
   return (
@@ -10,12 +9,12 @@ function Footer() {
                     <img src="logo192.png" alt="" className="footer__img" />
                 </figure>
                 <div className="footer__list">
-                <Link to="/" className='footer__link'>Home</Link>
-                <Link to="/" className='footer__link'>Piñatas</Link>
-                <Link to="/" className='footer__link'>Themes</Link>
-                <Link to="/" className='footer__link'>Garlands</Link>
-                <Link to="/" className='footer__link'>Decorations</Link>
-                <Link to="/" className='footer__link'>About</Link>
+                <a href="/" className='footer__link'>Home</a>
+                <a href="/Pinatas" className='footer__link'>Piñatas</a>
+                <a href="/Themes" className='footer__link'>Themes</a>
+                <a href="/Garlands" className='footer__link'>Garlands</a>
+                <a href="/Decorations" className='footer__link'>Decorations</a>
+                <a href="/" className='footer__link footer__no-cursor' onClick={(e) => e.preventDefault()}>About</a>
                 </div>
                 <div className="footer__copyright">
                     Copyright &copy; J.E.M. Creations 2024

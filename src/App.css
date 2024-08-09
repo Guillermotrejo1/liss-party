@@ -9,7 +9,7 @@
 .nav__links {
   display: flex;
   justify-content: space-around;
-  display: none;
+  /* display: none; */
 }
 
 .nav__list {
@@ -17,6 +17,11 @@
   font-size: 24px;
   font-weight: 700;
   color: lightpink;
+}
+
+.nav__list:hover {
+  transform: scale(1.1);
+  color: #c7b8ea;
 }
 
 li {
@@ -233,6 +238,14 @@ header {
   }
 }
 
+/* BANNER */
+
+.banner {
+  background-color: #f0f0f0;
+  padding: 20px;
+  text-align: center;
+}
+
 /* BurgerMenu */
 
 .burger__btn {
@@ -399,6 +412,10 @@ footer {
   text-decoration: none;
   padding: 0 12px;
   color: #fff;
+}
+
+.footer__no-cursor {
+  cursor: not-allowed;
 }
 
 .footer__link:hover {

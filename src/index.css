@@ -9,6 +9,7 @@
 html, body {
   background-color: lavender;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 :root {
@@ -17,6 +18,10 @@ html, body {
 
 button {
   cursor: pointer;
+}
+
+a {
+  text-decoration: none;
 }
 
 /* /**lavender, kightPink, black *

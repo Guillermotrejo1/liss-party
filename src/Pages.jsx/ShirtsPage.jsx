@@ -1,8 +1,12 @@
 import React from 'react'
+import Banner from '../Components/Banner'
 
 function ShirtsPage() {
   return (
-    <div>Welcome to the Shirts Page</div>
+    <div>
+      <Banner title="Shirts"/>
+      <h1>Welcome to the Shirts page</h1>
+    </div>
   )
 }
 

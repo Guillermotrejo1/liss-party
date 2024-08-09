@@ -1,8 +1,12 @@
 import React from 'react'
+import Banner from '../Components/Banner'
 
 function ThemesPage() {
   return (
-    <div>Welcome to the Themes page</div>
+    <div>
+      <Banner title="Themes"/>
+      <h1>Welcome to the Themes page</h1>
+    </div>
   )
 }
 

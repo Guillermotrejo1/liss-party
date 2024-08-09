@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function Piñatas() {
   return (
-    <section id="Piñatas">
+    <section id="Pinatas">
       <div className="header__container">
         <div className="header__description">
           <div className="header__title pinata__title">Piñatas</div>
