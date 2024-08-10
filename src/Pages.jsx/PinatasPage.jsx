@@ -7,7 +7,7 @@ function PinatasPage() {
   return (
     <div>
       <Banner title="Piñatas"/>
-      <h1 className='pinatas__header'>Welcome to the Piñatas page</h1>
+      <h1 className='pages__header'>Welcome to the Piñatas page</h1>
       <GalleryCards/>
       <Footer />
     </div>
