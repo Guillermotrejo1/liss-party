@@ -1,6 +1,5 @@
 import React from "react";
 import Gallery1 from "../assets/image1.jpg";
-import Grinch from "../assets/grinch5.jpg";
 
 function GalleryCards() {
   return (

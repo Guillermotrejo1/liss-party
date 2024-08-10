@@ -32,8 +32,6 @@ li {
 
 header {
   width: 100%;
-  height: 100vh;
-  height: 100svh;
   background-color: lavender;
 }
 
@@ -65,20 +63,40 @@ header {
 }
 
 .header__intro {
-  width: 100%;
   margin-top: 60px;
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+.header__wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 500px;
+  margin: 24px 14px;
+  padding: 34px;
 }
 
 .intro__wrapper {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   width: 50%;
+
+  margin: 0 14px;
 }
 
-.img_wrapper {
+.img__wrapper {
+  display: flex;
+  justify-content: center;
   width: 50%;
+  margin: 0 14px;
+}
+
+.jem__img {
+  width: 100%;
+  padding: 24px;
 }
 
 .intro__title {
@@ -110,6 +128,7 @@ header {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin: 40px 0 20px 0;
 }
 
 .display__text {
@@ -123,7 +142,7 @@ header {
 .arrow {
   position: absolute;
   font-size: 50px;
-  bottom: -130px;
+  bottom: -170px;
   color: #c7b8ea;
   animation: bounce 1s infinite;
 }
@@ -317,11 +336,11 @@ header {
   min-height: 600px;
 }
 
-.pinata__title{
+.pinata__title {
   margin-bottom: 40px;
 }
 
-.pages__header{
+.pages__header {
   text-align: center;
   margin: 14px 0;
 }
@@ -330,31 +349,33 @@ header {
   width: 100%;
   display: flex;
   position: relative;
+}
 
+/* CARD */
+
+.card__container--main {
+  width: 100%;
+  display: flex;
 }
 
 .card__row {
-  width: 100%;
-  max-width: 1200px;
   margin: 0 auto;
   padding: 0 24px;
-  width: calc(100%/ 2);
-  
+  width: 50%;
 }
 
 .card__wrapper {
   display: flex;
   justify-content: center;
-  height: 600px;
-  
-  
 }
 
 .card {
-  width: 600px;
-  height: 500px;
-  background-color: lightpink;
-  border: 4px solid #c7b8ea;
+  background-color: transparent;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 300px;
+  margin: 20px;
 }
 
 .card__img--wrapper {
@@ -364,7 +385,7 @@ header {
 }
 
 .card__img {
-  width: 50%;
+  width: 100%;
 }
 
 .link__btn {
@@ -375,6 +396,7 @@ header {
   padding: 8px 12px;
   top: 40%;
   left: 47%;
+  cursor: pointer;
 }
 
 .link__btn:hover {
@@ -392,8 +414,7 @@ header {
   justify-content: center;
 }
 
-
-.gallery__card{
+.gallery__card {
   background-color: transparent;
   border-radius: 15px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -409,7 +430,6 @@ header {
   border-radius: 10px 10px 0 0;
 }
 
-
 /* FOOTER */
 
 footer {
@@ -417,8 +437,8 @@ footer {
   opacity: 0.7;
 }
 .footer__container {
- width: 100%;
- height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .footer__logo--wrapper {
