@@ -3,6 +3,7 @@ import Banner from "../Components/Banner";
 import GalleryCards from "../Components/GalleryCards";
 import Footer from "../Components/Footer";
 import { useLocation } from "react-router-dom";
+import shirts1 from "../assets/shirts/shirts1.jpg"
 
 function ShirtsPage() {
   const location = useLocation();
@@ -15,7 +16,7 @@ function ShirtsPage() {
     <>
       <Banner title="Shirts" />
       <h1 className="pages__header">Welcome to the Shirts page</h1>
-      <GalleryCards />
+      <GalleryCards pageImage={shirts1} />
       <Footer />
     </>
   );

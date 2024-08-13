@@ -1,7 +1,7 @@
 import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-import grinch from "../assets/grinch5.jpg"
+import decoration1 from "../assets/decor/decor1.jpg"
 function Landing() {
   return (
     <section id="Landing">
@@ -29,7 +29,7 @@ function Landing() {
                 <button className="requests">Let's create</button>
               </div>
               <figure className="img__wrapper">
-                <img className="jem__img" src={grinch} alt="" />
+                <img className="jem__img" src={decoration1} alt="" />
               </figure>
             </div>
           </div>

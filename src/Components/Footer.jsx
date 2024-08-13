@@ -15,6 +15,7 @@ function Footer() {
                 <a href="/Themes" className='footer__link'>Themes</a>
                 <a href="/Garlands" className='footer__link'>Garlands</a>
                 <a href="/Decorations" className='footer__link'>Decorations</a>
+                <a href="/Shirts" className='footer__link'>Shirts</a>
                 <a href="/" className='footer__link footer__no-cursor' onClick={(e) => e.preventDefault()}>About</a>
                 </div>
                 <div className="footer__copyright">

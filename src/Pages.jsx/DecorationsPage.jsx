@@ -3,6 +3,7 @@ import Banner from "../Components/Banner";
 import Footer from "../Components/Footer";
 import GalleryCards from "../Components/GalleryCards";
 import { useLocation } from "react-router-dom";
+import decorations1 from "../assets/decor/decor1.jpg"
 
 function DecorationsPage() {
   const location = useLocation();
@@ -15,7 +16,7 @@ function DecorationsPage() {
     <>
       <Banner title="Decorations" />
       <h1 className="pages__header">Welcome to the Decorations page</h1>
-      <GalleryCards />
+      <GalleryCards pageImage={decorations1}/>
       <Footer />
     </>
   );

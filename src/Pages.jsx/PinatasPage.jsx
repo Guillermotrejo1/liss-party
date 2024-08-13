@@ -3,6 +3,7 @@ import Banner from "../Components/Banner";
 import GalleryCards from "../Components/GalleryCards";
 import Footer from "../Components/Footer.jsx";
 import { useLocation } from "react-router-dom";
+import pinata1 from "../assets/pinatas/pin1.jpg"
 
 function PinatasPage() {
   const location = useLocation();
@@ -15,7 +16,7 @@ function PinatasPage() {
     <>
       <Banner title="Piñatas" />
       <h1 className="pages__header">Welcome to the Piñatas page</h1>
-      <GalleryCards />
+      <GalleryCards pageImage={pinata1}/>
       <Footer />
     </>
   );
