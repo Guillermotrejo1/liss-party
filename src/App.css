@@ -412,13 +412,14 @@ header {
   flex-wrap: wrap;
   margin: 40px 0;
   justify-content: center;
+  min-height: 100vh;
 }
 
 .gallery__card {
   background-color: transparent;
   border-radius: 15px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
+  /* overflow: hidden; */
   width: 300px;
   margin: 20px;
 }

@@ -10,6 +10,7 @@ import Footer from '../Components/Footer'
 import Shirts from '../Components/Shirts'
 
 function Home() {
+  
   return (
     <>
     <Nav />

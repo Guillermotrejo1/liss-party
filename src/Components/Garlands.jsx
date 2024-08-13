@@ -1,8 +1,8 @@
-import React from 'react'
 import Card from './Card'
 import { Link } from 'react-router-dom'
 
 function Garlands() {
+
   return (
     <section id="Garlands">
       <div className="header__container">
