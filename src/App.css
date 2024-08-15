@@ -326,6 +326,28 @@ header {
 
 .menu__list {
   padding: 4px;
+  list-style-type: none;
+  font-size: 20px;
+  font-weight: 700;
+  color: lightpink;
+}
+
+.menu__list a:visited {
+  color: lightpink;
+}
+
+.menu__list:hover {
+  transform: scale(1.1);
+  color: #c7b8ea;
+}
+
+.menu__list a:hover {
+  transform: scale(1.1);
+  color: #c7b8ea;
+}
+.menu__list a:hover {
+  transform: scale(1.1);
+  color: #c7b8ea;
 }
 
 /* PINATAS */

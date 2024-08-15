@@ -21,21 +21,21 @@ function BurgerMenu() {
             <button className="burger__btn burger__btn--close" onClick={closeMenu}>
                 <FontAwesomeIcon icon={faTimes} />
             </button>
-          <ul className="nav__links menu__links">
-            <li className="nav__list menu__list">
-              <Link to="/Piñatas"></Link>Piñatas
+          <ul className="menu__links">
+            <li className="menu__list">
+              <Link to="/Pinatas">Piñatas</Link>
             </li>
-            <li className="nav__list menu__list">
-              <Link to="/Themes"></Link>Themes
+            <li className="menu__list">
+              <Link to="/Themes">Themes</Link>
             </li>
-            <li className="nav__list menu__list">
-              <Link to="/Garlands"></Link>Garlands
+            <li className="menu__list">
+              <Link to="/Garlands">Garlands</Link>
             </li>
-            <li className="nav__list menu__list">
-              <Link to="/Decorations"></Link>Decorations
+            <li className="menu__list">
+              <Link to="/Decorations">Decorations</Link>
             </li>
-            <li className="nav__list menu__list">
-              <Link to="/About"></Link>Shirts
+            <li className="menu__list">
+              <Link to="/Shirts">Shirts</Link>
             </li>
           </ul>
         </div>
