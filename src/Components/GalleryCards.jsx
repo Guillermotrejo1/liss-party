@@ -6,7 +6,7 @@ function GalleryCards({ images }) {
       <div className="gallery__container">
         {images.map((images, index) => (
           <div key={index} className="gallery__card--wrapper">
-            <div class="gallery__card">
+            <div className="gallery__card">
               <img className="gallery__img" src={images} alt="" />
             </div>
           </div>
