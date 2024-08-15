@@ -2,21 +2,30 @@ import React, { useEffect } from "react";
 import Banner from "../Components/Banner";
 import GalleryCards from "../Components/GalleryCards";
 import Footer from "../Components/Footer";
-import { useLocation } from "react-router-dom";
-import theme1 from "../assets/themes/theme1.jpg"
 
 function ThemesPage() {
-  const location = useLocation();
+  const imgFiles = [
+    "theme1",
+    "theme2",
+    "theme3",
+    "theme4",
+    "theme5",
+    "theme6",
+  ];
+  const images = imgFiles.reduce((acc, file) => {
+    acc[file] = require(`../assets/themes/${file}.jpg`);
+    return acc;
+  }, {});
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [location]);
+  }, []);
   
   return (
     <>
       <Banner title="Themes" />
       <h1 className="pages__header">Welcome to the Themes page</h1>
-      <GalleryCards pageImage={theme1} />
+      <GalleryCards images={Object.values(images)} />
       <Footer />
     </>
   );

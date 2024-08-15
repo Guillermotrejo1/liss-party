@@ -1,22 +1,33 @@
-import React, { useEffect } from "react";
 import Banner from "../Components/Banner";
 import GalleryCards from "../Components/GalleryCards";
 import Footer from "../Components/Footer";
-import { useLocation } from "react-router-dom";
-import garland2 from "../assets/garlands/gar2.jpg"
+import { useEffect } from "react";
 
 function GarlandsPage() {
-  const location = useLocation();
+  const imgFiles = [
+    "gar1",
+    "gar2",
+    "gar3",
+    "gar4",
+    "gar6",
+    "gar7"
+  ];
+
+  const images = imgFiles.reduce((acc, file) => {
+    acc[file] = require(`../assets/garlands/${file}.jpg`);
+    return acc;
+  }, {});
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [location]);
+  }, []);
+  
   
   return (
     <>
       <Banner title="Garlands" />
       <h1 className="pages__header">Welcome to the Garlands page</h1>
-      <GalleryCards pageImage={garland2} />
+      <GalleryCards images={Object.values(images)} />
       <Footer />
     </>
   );
