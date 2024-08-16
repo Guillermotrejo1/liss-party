@@ -51,7 +51,6 @@ function DecorationsPage() {
               width={300}
               height={200}
               borderRadius={50}
-              style={{ margin: "10px" }}
             />
           ))}
         </div>
