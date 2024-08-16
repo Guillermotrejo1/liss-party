@@ -1,9 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Banner from "../Components/Banner";
 import Footer from "../Components/Footer";
 import GalleryCards from "../Components/GalleryCards";
+import Skeleton from "../Components/UI/Skeleton";
 
 function DecorationsPage() {
+  const [isLoading, setIsLoading] = useState(true)
   const imgFiles = [
     "decor1",
     "decor2",
@@ -34,13 +36,28 @@ function DecorationsPage() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    setIsLoading(false)
   }, []);
 
   return (
     <>
       <Banner title="Decorations" />
       <h1 className="pages__header">Welcome to the Decorations page</h1>
-      <GalleryCards images={Object.values(images)} />
+      {isLoading ? (
+        <div className="gallery__container">
+          {Object.values(images).map((image, index) => (
+            <Skeleton
+              key={index}
+              width={300}
+              height={200}
+              borderRadius={50}
+              style={{ margin: "10px" }}
+            />
+          ))}
+        </div>
+      ) : (
+        <GalleryCards images={Object.values(images)} />
+      )}
       <Footer />
     </>
   );

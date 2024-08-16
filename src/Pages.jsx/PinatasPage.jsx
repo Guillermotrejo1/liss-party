@@ -19,21 +19,24 @@ function PinatasPage() {
 
   return (
     <>
+      <Banner title="Piñatas" />
+      <h1 className="pages__header">Welcome to the Piñatas page</h1>
       {isLoading ? (
-        <>
-          <Skeleton width={50} height={50} borderRadius={100} />
-          <Skeleton width={50} height={50} borderRadius={100} />
-          <Skeleton width={50} height={50} borderRadius={100} />
-          <Skeleton width={50} height={50} borderRadius={100} />
-        </>
+        <div className="gallery__container">
+          {Object.values(images).map((image, index) => (
+            <Skeleton
+              key={index}
+              width={300}
+              height={200}
+              borderRadius={50}
+              style={{ margin: "10px" }}
+            />
+          ))}
+        </div>
       ) : (
-        <>
-          <Banner title="Piñatas" />
-          <h1 className="pages__header">Welcome to the Piñatas page</h1>
-          <GalleryCards images={Object.values(images)} />
-          <Footer />
-        </>
+        <GalleryCards images={Object.values(images)} />
       )}
+      <Footer />
     </>
   );
 }

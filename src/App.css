@@ -425,7 +425,7 @@ header {
   border: 2px solid lightpink;
 }
 
-.skeleton-box {
+.skeleton__box {
   display: inline-block;
   height: 1em;
   position: relative;
@@ -433,7 +433,7 @@ header {
   background-color: #dddbdd;
 }
 
-.skeleton-box::after {
+.skeleton__box::after {
   position: absolute;
   top: 0;
   right: 0;

@@ -1,9 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Banner from "../Components/Banner";
 import GalleryCards from "../Components/GalleryCards";
 import Footer from "../Components/Footer";
+import Skeleton from "../Components/UI/Skeleton";
 
 function ShirtsPage() {
+  const [isLoading, setIsLoading] = useState(true);
   const imgFiles = [
     "shirts1",
     "shirts2",
@@ -23,13 +25,28 @@ function ShirtsPage() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    setIsLoading(false)
   }, []);
 
   return (
     <>
       <Banner title="Shirts" />
       <h1 className="pages__header">Welcome to the Shirts page</h1>
-      <GalleryCards images={Object.values(images)} />
+      {isLoading ? (
+        <div className="gallery__container">
+          {Object.values(images).map((image, index) => (
+            <Skeleton
+              key={index}
+              width={300}
+              height={200}
+              borderRadius={50}
+              style={{ margin: "10px" }}
+            />
+          ))}
+        </div>
+      ) : (
+        <GalleryCards images={Object.values(images)} />
+      )}
       <Footer />
     </>
   );
