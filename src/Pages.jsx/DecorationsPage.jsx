@@ -3,6 +3,9 @@ import Banner from "../Components/Banner";
 import Footer from "../Components/Footer";
 import GalleryCards from "../Components/GalleryCards";
 import Skeleton from "../Components/UI/Skeleton";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 function DecorationsPage() {
   const [isLoading, setIsLoading] = useState(true)
@@ -43,6 +46,9 @@ function DecorationsPage() {
     <>
       <Banner title="Decorations" />
       <h1 className="pages__header">Welcome to the Decorations page</h1>
+      <Link to="/">
+      <button className="back__btn"> <FontAwesomeIcon icon={faArrowLeft}/> </button>
+      </Link>
       {isLoading ? (
         <div className="gallery__container">
           {Object.values(images).map((image, index) => (

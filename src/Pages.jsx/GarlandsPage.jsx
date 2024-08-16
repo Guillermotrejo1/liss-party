@@ -3,6 +3,9 @@ import GalleryCards from "../Components/GalleryCards";
 import Footer from "../Components/Footer";
 import { useEffect, useState } from "react";
 import Skeleton from "../Components/UI/Skeleton";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 function GarlandsPage() {
   const [isLoading, setIsLoading] = useState(true);
@@ -30,6 +33,9 @@ function GarlandsPage() {
     <>
       <Banner title="Garlands" />
       <h1 className="pages__header">Welcome to the Garlands page</h1>
+      <Link to="/">
+      <button className="back__btn"> <FontAwesomeIcon icon={faArrowLeft}/> </button>
+      </Link>
       {isLoading ? (
         <div className="gallery__container">
           {Object.values(images).map((image, index) => (

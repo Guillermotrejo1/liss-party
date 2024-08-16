@@ -257,14 +257,6 @@ header {
   }
 }
 
-/* BANNER */
-
-.banner {
-  background-color: #c7b8ea;
-  padding: 60px;
-  text-align: center;
-}
-
 /* BurgerMenu */
 
 .burger__btn {
@@ -424,6 +416,37 @@ header {
 .link__btn:hover {
   border: 2px solid lightpink;
 }
+
+/* BANNER */
+
+.banner {
+  background-color: #c7b8ea;
+  padding: 60px;
+  text-align: center;
+  position: relative;
+}
+
+.back__btn {
+  position: absolute;
+  width: 100px;
+  height: 40px;
+  padding: 8px 12px;
+  border: none;
+  font-size: 40px;
+  background: transparent;
+  top: 10%;
+  left: 1%;
+  cursor: pointer;
+}
+
+.back__btn:hover {
+  box-sizing: border-box;
+  color: lightpink;
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+/* SKELETON */
 
 .skeleton__box {
   display: inline-block;
