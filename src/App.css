@@ -541,6 +541,25 @@ header {
   object-fit: contain;
 }
 
+.lightbox__arrow-left,
+.lightbox__arrow-right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 48px;
+  color: #c7b8ea;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.lightbox__arrow-left {
+  left: 5em;
+}
+
+.lightbox__arrow-right {
+  right: 5em;
+}
+
 /* SCROLL-BAR */
 .scrollbar-container {
   overflow-y: hidden;

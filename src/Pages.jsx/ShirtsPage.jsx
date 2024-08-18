@@ -6,21 +6,12 @@ import Skeleton from "../Components/UI/Skeleton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import shirtsImages from "../assets/shirts/shirtsImages.jsx"
 
 function ShirtsPage() {
   const [isLoading, setIsLoading] = useState(true);
-  const imgFiles = [
-    "shirts1",
-    "shirts2",
-    "shirts3",
-    "shirts4",
-    "shirts5",
-    "shirts6",
-    "shirts7",
-    "shirts8",
-    "shirts9",
-    "shirts10",
-  ];
+  const imgFiles = shirtsImages
+  
   const images = imgFiles.reduce((acc, file) => {
     acc[file] = require(`../assets/shirts/${file}.jpg`);
     return acc;

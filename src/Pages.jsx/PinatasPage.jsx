@@ -6,10 +6,11 @@ import Skeleton from "../Components/UI/Skeleton.jsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import pinataImages from "../assets/pinatas/pinatasImages.jsx"
 
 function PinatasPage() {
   const [isLoading, setIsLoading] = useState(true);
-  const imgFiles = ["pin1", "pin2", "pin3", "pin4", "pin5", "pin6", "pin7"];
+  const imgFiles = pinataImages
   const images = imgFiles.reduce((acc, file) => {
     acc[file] = require(`../assets/pinatas/${file}.jpg`);
     return acc;

@@ -5,18 +5,13 @@ import Footer from "../Components/Footer";
 import Skeleton from "../Components/UI/Skeleton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"
+import themesImages from "../assets/themes/themesImages.jsx"
 
 function ThemesPage() {
   const [isLoading, setIsLoading] = useState(true);
-  const imgFiles = [
-    "theme1",
-    "theme2",
-    "theme3",
-    "theme4",
-    "theme5",
-    "theme6",
-  ];
+  const imgFiles = themesImages
+  
   const images = imgFiles.reduce((acc, file) => {
     acc[file] = require(`../assets/themes/${file}.jpg`);
     return acc;

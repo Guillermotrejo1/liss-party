@@ -6,17 +6,11 @@ import Skeleton from "../Components/UI/Skeleton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import garlandImages from "../assets/garlands/garlandImages.jsx"
 
 function GarlandsPage() {
   const [isLoading, setIsLoading] = useState(true);
-  const imgFiles = [
-    "gar1",
-    "gar2",
-    "gar3",
-    "gar4",
-    "gar6",
-    "gar7"
-  ];
+  const imgFiles = garlandImages
 
   const images = imgFiles.reduce((acc, file) => {
     acc[file] = require(`../assets/garlands/${file}.jpg`);

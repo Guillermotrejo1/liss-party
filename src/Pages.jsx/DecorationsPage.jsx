@@ -6,31 +6,11 @@ import Skeleton from "../Components/UI/Skeleton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import decorImages from "../assets/decor/decorImages.jsx"
 
 function DecorationsPage() {
   const [isLoading, setIsLoading] = useState(true)
-  const imgFiles = [
-    "decor1",
-    "decor2",
-    "decor3",
-    "decor4",
-    "decor5",
-    "decor6",
-    "decor7",
-    "decor8",
-    "decor9",
-    "decor10",
-    "decor11",
-    "decor12",
-    "decor13",
-    "decor14",
-    "decor15",
-    "decor16",
-    "decor17",
-    "decor18",
-    "decor19",
-    "decor20",
-  ];
+  const imgFiles = decorImages
 
   const images = imgFiles.reduce((acc, file) => {
     acc[file] = require(`../assets/decor/${file}.jpg`);
