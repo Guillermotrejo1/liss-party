@@ -4,22 +4,43 @@ import GalleryCards from "../Components/GalleryCards";
 import Footer from "../Components/Footer";
 import Skeleton from "../Components/UI/Skeleton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-import shirtsImages from "../assets/shirts/shirtsImages.jsx"
+import shirtsImages from "../assets/shirts/shirtsImages.jsx";
 
 function ShirtsPage() {
   const [isLoading, setIsLoading] = useState(true);
-  const imgFiles = shirtsImages
-  
+  const [currentPageIndex, setCurrentPageIndex] = useState(0);
+  const [isOpen, setIsOpen] = useState(false);
+  const imgFiles = shirtsImages;
+
   const images = imgFiles.reduce((acc, file) => {
     acc[file] = require(`../assets/shirts/${file}.jpg`);
     return acc;
   }, {});
 
+  const handleOpen = (index) => {
+    setIsOpen(true);
+    setCurrentPageIndex(index);
+  };
+
+  const handleClose = () => {
+    setIsOpen(false);
+  };
+
+  const handleClick = (direction) => {
+    if (direction === "left") {
+      setCurrentPageIndex(
+        (prevIndex) => (prevIndex - 1 + imgFiles.length) % imgFiles.length
+      );
+    } else if (direction === "right") {
+      setCurrentPageIndex((prevIndex) => (prevIndex + 1) % imgFiles.length);
+    }
+  };
+
   useEffect(() => {
     window.scrollTo(0, 0);
-    setIsLoading(false)
+    setIsLoading(false);
   }, []);
 
   return (
@@ -27,21 +48,50 @@ function ShirtsPage() {
       <Banner title="Shirts" />
       <h1 className="pages__header">Welcome to the Shirts page</h1>
       <Link to="/">
-      <button className="back__btn"> <FontAwesomeIcon icon={faArrowLeft}/> </button>
+        <button className="back__btn">
+          <FontAwesomeIcon icon={faArrowLeft} />
+        </button>
       </Link>
       {isLoading ? (
         <div className="gallery__container">
           {Object.values(images).map((image, index) => (
-            <Skeleton
-              key={index}
-              width={300}
-              height={200}
-              borderRadius={50}
-            />
+            <Skeleton key={index} width={300} height={200} borderRadius={50} />
           ))}
         </div>
       ) : (
-        <GalleryCards images={Object.values(images)} />
+        <GalleryCards
+          images={Object.values(images)}
+          imgFiles={imgFiles}
+          isOpen={isOpen}
+          currentIndex={currentPageIndex}
+          onOpen={handleOpen}
+          onClose={handleClose}
+          onClick={handleClick}
+        />
+      )}
+      {isOpen && (
+        <div className="lightbox">
+          <button
+            className="lightbox__arrow-left"
+            onClick={() => handleClick("left")}
+          >
+            <FontAwesomeIcon icon={faArrowLeft} />
+          </button>
+          <div className="lightbox__content">
+            <img
+              className="modal__img"
+              src={images[imgFiles[currentPageIndex]]}
+              alt=""
+              onClick={handleClose}
+            />
+          </div>
+          <button
+            className="lightbox__arrow-right"
+            onClick={() => handleClick("right")}
+          >
+            <FontAwesomeIcon icon={faArrowRight} />
+          </button>
+        </div>
       )}
       <Footer />
     </>
