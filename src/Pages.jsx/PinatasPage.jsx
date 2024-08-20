@@ -4,7 +4,11 @@ import GalleryCards from "../Components/GalleryCards";
 import Footer from "../Components/Footer.jsx";
 import Skeleton from "../Components/UI/Skeleton.jsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import {
+  faArrowLeft,
+  faArrowRight,
+  faCircleXmark,
+} from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import pinataImages from "../assets/pinatas/pinatasImages.jsx";
 
@@ -72,7 +76,7 @@ function PinatasPage() {
       {isOpen && (
         <div className="lightbox">
           <button
-            className="lightbox__arrow-left"
+            className="lightbox__arrow--left"
             onClick={() => handleClick("left")}
           >
             <FontAwesomeIcon icon={faArrowLeft} />
@@ -82,11 +86,13 @@ function PinatasPage() {
               className="modal__img"
               src={images[imgFiles[currentPageIndex]]}
               alt=""
-              onClick={handleClose}
             />
+            <button className="lightbox__close--icon" onClick={handleClose}>
+              <FontAwesomeIcon icon={faCircleXmark} />
+            </button>
           </div>
           <button
-            className="lightbox__arrow-right"
+            className="lightbox__arrow--right"
             onClick={() => handleClick("right")}
           >
             <FontAwesomeIcon icon={faArrowRight} />

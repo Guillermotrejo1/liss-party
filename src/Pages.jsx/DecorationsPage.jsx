@@ -4,7 +4,11 @@ import Footer from "../Components/Footer";
 import GalleryCards from "../Components/GalleryCards";
 import Skeleton from "../Components/UI/Skeleton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import {
+  faArrowLeft,
+  faArrowRight,
+  faCircleXmark,
+} from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import decorImages from "../assets/decor/decorImages.jsx";
 
@@ -30,11 +34,13 @@ function DecorationsPage() {
 
   const handleClick = (direction) => {
     if (direction === "left") {
-    setCurrentPageIndex((prevIndex) => (prevIndex - 1 + imgFiles.length) % imgFiles.length);
+      setCurrentPageIndex(
+        (prevIndex) => (prevIndex - 1 + imgFiles.length) % imgFiles.length
+      );
     } else if (direction === "right") {
-    setCurrentPageIndex((prevIndex) => (prevIndex + 1) % imgFiles.length);
+      setCurrentPageIndex((prevIndex) => (prevIndex + 1) % imgFiles.length);
     }
-    };
+  };
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -70,20 +76,23 @@ function DecorationsPage() {
       {isOpen && (
         <div className="lightbox">
           <button
-            className="lightbox__arrow-left"
+            className="lightbox__arrow--left"
             onClick={() => handleClick("left")}
           >
             <FontAwesomeIcon icon={faArrowLeft} />
           </button>
           <div className="lightbox__content">
-            <img className="modal__img"
+            <img
+              className="modal__img"
               src={images[imgFiles[currentPageIndex]]}
               alt=""
-              onClick={handleClose}
             />
+            <button className="lightbox__close--icon" onClick={handleClose}>
+              <FontAwesomeIcon icon={faCircleXmark} />
+            </button>
           </div>
           <button
-            className="lightbox__arrow-right"
+            className="lightbox__arrow--right"
             onClick={() => handleClick("right")}
           >
             <FontAwesomeIcon icon={faArrowRight} />

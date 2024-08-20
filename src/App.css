@@ -541,7 +541,7 @@ header {
   object-fit: contain;
 }
 
-.lightbox__arrow-left, .lightbox__arrow-right {
+.lightbox__arrow--left, .lightbox__arrow--right {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -549,20 +549,41 @@ header {
   color: #c7b8ea;
   cursor: pointer;
   z-index: 1000;
-  background: none;
-  border: none;
+  background-color: transparent;
   border-radius: 50px;
   padding: 4px;
   }
   
 
-.lightbox__arrow-left {
+.lightbox__arrow--left {
   left: 5em;
 }
 
-.lightbox__arrow-right {
+.lightbox__arrow--right {
   right: 5em;
 }
+
+.lightbox__content {
+  position: relative;
+  }
+
+.lightbox__close--icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  color:#c7b8ea;
+  cursor: pointer;
+  z-index: 1001;
+  border: none;
+  background: none;
+  }
+
+.lightbox__close--icon:hover {
+  background-color: grey ;
+  border-radius: 50px;
+  transform: scale(1.1);
+  }
 
 
 /* MODAL */
