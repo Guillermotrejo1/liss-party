@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import Card from "./Card";
 import { Link, useLocation } from "react-router-dom";
+import pin1 from "../assets/pinatas/pin1.jpg"
+import pin2 from "../assets/pinatas/pin2.jpg"
 
 function Piñatas() {
   const location = useLocation();
@@ -17,14 +19,14 @@ function Piñatas() {
         </div>
         <div className="card__container">
           <Card
-            imageUrl="https://lh3.googleusercontent.com/pw/AP1GczNym9O8HuEqWFFBwbUFIyOO86rUwglibQBfkLNeXLOH8mEPjzDJU56GfBwRUTdoDIXExp_w5TzSquNGqgF27XLK0g9cPkTCqY1cva8A28gBOkOAfaE0WTu4xi9jGKFQwHkjKijbTl1--uaDuCbaefdi2g=w776-h1033-s-no-gm?authuser=0"
+            image={pin1}
             text="card1"
           />
           <Link to="/Pinatas">
             <button className="link__btn">See More</button>
           </Link>
           <Card
-            imageUrl="https://lh3.googleusercontent.com/pw/AP1GczN3qfsKblVm7PSJ-3LE4gr2RQ1ijRYPGHvLNjJUf_ERh0dhEcD2NlTuz29WF6LJghocB4TzU1thng15cpBv-k3BZsCKJEs7OJElvWsDLiOi6pKwrfY08OyvDbxY6QkGrPEpcTRbweT_ZZ4CziE9h_65zw=w776-h1033-s-no-gm?authuser=0"
+            image={pin2}
             text="card2"
           />
         </div>
