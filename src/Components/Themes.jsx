@@ -6,17 +6,21 @@ import theme2 from "../assets/themes/theme2.jpg"
 
 function Themes() {
   return (
-    <section id="Themes" data-aos="fade-left" data-aos-delay="400">
+    <section id="Themes" data-aos="fade-up" data-aos-delay="400">
       <div className="header__container">
         <div className="header__description">
           <div className="header__title pinata__title">Themes</div>
         </div>
         <div className="card__container">
-          <Card image={theme6}/>
+        <div data-aos="flip-left">
+            <Card image={theme2} />
+          </div>
           <Link to="/Themes">
             <button className="link__btn">See More</button>
           </Link>
-          <Card image={theme2}/>
+          <div data-aos="flip-left">
+            <Card image={theme6} />
+          </div>
         </div>
       </div>
     </section>

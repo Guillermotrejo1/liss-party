@@ -6,17 +6,21 @@ import decor2 from "../assets/decor/decor2.jpg"
 
 function Decorations() {
   return (
-    <section id="Decorations" data-aos="fade-left" data-aos-delay="600">
+    <section id="Decorations" data-aos="fade-up" data-aos-delay="400">
       <div className="header__container">
         <div className="header__description">
           <div className="header__title pinata__title">Decorations</div>
         </div>
         <div className="card__container">
-          <Card image={decor1} />
+          <div data-aos="flip-left">
+            <Card image={decor1} />
+          </div>
           <Link to="/Decorations">
             <button className="link__btn">See More</button>
           </Link>
-          <Card image={decor2} />
+          <div data-aos="flip-left">
+            <Card image={decor2} />
+          </div>
         </div>
       </div>
     </section>

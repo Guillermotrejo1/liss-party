@@ -11,6 +11,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import pinataImages from "../assets/pinatas/pinatasImages.jsx";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 function PinatasPage() {
   const [isLoading, setIsLoading] = useState(true);
@@ -45,6 +47,10 @@ function PinatasPage() {
   useEffect(() => {
     window.scrollTo(0, 0);
     setIsLoading(false);
+    Aos.init({
+      duration: 1200,
+      once: true,
+    });
   }, []);
 
   return (
@@ -71,6 +77,7 @@ function PinatasPage() {
           onOpen={handleOpen}
           onClose={handleClose}
           onClick={handleClick}
+          data-aos="fade-right" data-aos-delay="400"
         />
       )}
       {isOpen && (

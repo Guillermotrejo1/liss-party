@@ -2,21 +2,25 @@ import React from 'react'
 import Card from './Card'
 import { Link } from 'react-router-dom'
 import shirt1 from "../assets/shirts/shirts1.jpg"
-import shirts7 from "../assets/shirts/shirts7.jpg"
+import shirt7 from "../assets/shirts/shirts7.jpg"
 
 function Shirts() {
   return (
-    <section id="Shirts" data-aos="fade-right" data-aos-delay="600">
+    <section id="Shirts" data-aos="fade-up" data-aos-delay="400">
       <div className="header__container">
         <div className="header__description">
           <div className="header__title pinata__title">Shirts</div>
         </div>
         <div className="card__container">
-          <Card image={shirt1}/>
+        <div data-aos="flip-left">
+            <Card image={shirt1} />
+          </div>
           <Link to="/Shirts">
             <button className="link__btn">See More</button>
           </Link>
-          <Card image={shirts7}/>
+          <div data-aos="flip-left">
+            <Card image={shirt7} />
+          </div>
         </div>
       </div>
     </section>
