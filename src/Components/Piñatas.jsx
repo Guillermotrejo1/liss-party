@@ -12,7 +12,7 @@ function Piñatas() {
     }, [location]);;
 
   return (
-    <section id="Pinatas">
+    <section id="Pinatas" data-aos="fade-right" data-aos-delay="300">
       <div className="header__container">
         <div className="header__description">
           <div className="header__title pinata__title">Piñatas</div>

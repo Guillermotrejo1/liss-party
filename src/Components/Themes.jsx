@@ -6,7 +6,7 @@ import theme2 from "../assets/themes/theme2.jpg"
 
 function Themes() {
   return (
-    <section id="Themes">
+    <section id="Themes" data-aos="fade-left" data-aos-delay="400">
       <div className="header__container">
         <div className="header__description">
           <div className="header__title pinata__title">Themes</div>

@@ -13,7 +13,7 @@ function BurgerMenu() {
 
   return (
     <nav>
-      <div className="burger__menu">
+      <div className="burger__menu" data-aos="fade-in" data-aos-delay="300">
         <button className="burger__btn" onClick={openMenu}>
           <FontAwesomeIcon icon={faGem} />
         </button>

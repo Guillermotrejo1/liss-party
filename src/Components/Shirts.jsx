@@ -6,7 +6,7 @@ import shirts7 from "../assets/shirts/shirts7.jpg"
 
 function Shirts() {
   return (
-    <section id="Shirts">
+    <section id="Shirts" data-aos="fade-right" data-aos-delay="600">
       <div className="header__container">
         <div className="header__description">
           <div className="header__title pinata__title">Shirts</div>

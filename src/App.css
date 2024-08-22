@@ -97,6 +97,7 @@ header {
 .jem__img {
   width: 100%;
   padding: 24px;
+  background-color: pink;
 }
 
 .intro__title {
@@ -113,14 +114,74 @@ header {
   margin-top: 40px;
 }
 
-.requests {
+.request__btn {
+  margin: 100px;
+  padding: 15px 40px;
+  border: none;
+  outline: none;
+  color: #FFF;
   cursor: pointer;
-  font-size: 24px;
-  padding: 12px 8px;
-  border-radius: 9999px;
-  margin-top: 40px;
+  position: relative;
+  z-index: 0;
+  border-radius: 12px;
+  top: 15%;
+  font-weight: bold;
   width: 200px;
-  align-self: center;
+  margin: auto;
+}
+
+.request__btn::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: lightpink;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+/* glow */
+.request__btn::before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #FF0000, #FF7300, #FFFB00, #48FF00,
+    #00FFD5, #002BFF, #FF00C8, #FF0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 600%;
+  z-index: -1;
+  width: calc(100% + 4px);
+  height:  calc(100% + 4px);
+  filter: blur(8px);
+  animation: glowing 20s linear infinite;
+  transition: opacity .3s ease-in-out;
+  border-radius: 10px;
+  opacity: 0;
+}
+
+@keyframes glowing {
+  0% {background-position: 0 0;}
+  50% {background-position: 400% 0;}
+  100% {background-position: 0 0;}
+}
+
+/* hover */
+.request__btn:hover::before {
+  opacity: 1;
+}
+
+.request__btn:active:after {
+  background: transparent;
+}
+
+.request__btn:active {
+  color: #000;
+  font-weight: bold;
 }
 
 .display {
@@ -168,6 +229,7 @@ header {
   justify-content: center;
   align-items: center;
   justify-content: space-evenly;
+  margin: 32px 0;
 }
 
 .diamond {
@@ -175,12 +237,12 @@ header {
   border-style: solid;
   border-color: transparent transparent var(--diamond-color) transparent;
   border-width: 0 25px 25px 25px;
-  height: 0;
-  left: 50px;
+  /* height: 0;
+  left: 50px; */
   width: 50px;
   box-sizing: content-box;
   position: relative;
-  margin: 20px 60px 50px 0;
+  /* margin: 20px 60px 50px 0; */
   animation: rotating 2s infinite linear;
 }
 
@@ -201,12 +263,12 @@ header {
   border-style: solid;
   border-color: transparent transparent #e0115f transparent;
   border-width: 0 25px 25px 25px;
-  height: 0;
-  left: 50px;
+  /* height: 0;
+  left: 50px; */
   width: 50px;
   box-sizing: content-box;
   position: relative;
-  margin: 20px 0 50px 0;
+  /* margin: 20px 0 50px 0; */
   animation: rotating 2s infinite linear;
 }
 
@@ -227,12 +289,12 @@ header {
   border-style: solid;
   border-color: transparent transparent #c7b8ea transparent;
   border-width: 0 25px 25px 25px;
-  height: 0;
-  left: 50px;
+  /* height: 0;
+  left: 50px; */
   width: 50px;
   box-sizing: content-box;
   position: relative;
-  margin: 20px 0 50px 0;
+  /* margin: 20px 0 50px 0; */
   animation: rotating 2s infinite linear;
 }
 

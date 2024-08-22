@@ -6,7 +6,7 @@ import gar7 from "../assets/garlands/gar7.jpg"
 function Garlands() {
 
   return (
-    <section id="Garlands">
+    <section id="Garlands" data-aos="fade-right" data-aos-delay="500">
       <div className="header__container">
         <div className="header__description">
           <div className="header__title pinata__title">Garlands</div>

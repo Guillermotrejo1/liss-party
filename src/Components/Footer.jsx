@@ -6,7 +6,7 @@ function Footer() {
     <footer>
         <div className="footer_container">
             <div className="footer__row">
-                <figure className="footer__logo--wrapper">
+                <figure className="footer__logo--wrapper" data-aos="fade-in" data-aos-delay="300">
                     <img src={myLogo} alt="" className="footer__img" />
                 </figure>
                 <div className="footer__list">

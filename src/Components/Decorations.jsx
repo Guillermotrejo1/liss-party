@@ -6,7 +6,7 @@ import decor2 from "../assets/decor/decor2.jpg"
 
 function Decorations() {
   return (
-    <section id="Decorations">
+    <section id="Decorations" data-aos="fade-left" data-aos-delay="600">
       <div className="header__container">
         <div className="header__description">
           <div className="header__title pinata__title">Decorations</div>
