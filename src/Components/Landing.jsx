@@ -41,17 +41,14 @@ function Landing() {
                   data-aos="fade-right"
                   data-aos-delay="300"
                 >
-                  Hi My name is Lisseth
+                  Welcome to JEM creations!
                 </h1>
                 <p
                   className="intro__text"
                   data-aos="fade-right"
                   data-aos-delay="400"
                 >
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Beatae deserunt laboriosam consectetur magni corrupti,
-                  assumenda quisquam, ipsa eos itaque debitis, molestiae ullam
-                  dolor labore alias commodi animi iure dolorum doloribus!
+                  My name is <span className="highlighted">Lisseth</span>, and my goal is to bring your ideas to life while taking away the <span className="highlighted">stress and labor of decorating</span>, allowing you to focus on what matters most - <span className="highlighted">enjoying your special moments and creating unforgettable memories.</span>
                 </p>
                 <button
                   className="request__btn"
