@@ -118,7 +118,7 @@ header {
   font-size: 24px;
   text-align: center;
   margin-top: 40px;
-  font-family:cursive;
+  font-family: cursive;
 }
 
 .highlighted {
@@ -876,7 +876,6 @@ footer {
     margin-top: 60px;
   }
 
-
   .jem__img {
     min-width: 200px;
     max-height: 300px;
@@ -901,7 +900,7 @@ footer {
   .intro__text {
     font-size: 14px;
   }
-  
+
   .highlighted {
     font-size: 18px;
     text-shadow: 2px 2px 5px lightpink;
@@ -920,6 +919,20 @@ footer {
 
   .link__btn {
     margin: 50px;
+  }
+
+  .lightbox__arrow--left,
+  .lightbox__arrow--right {
+    position: static;
+    transform: translateY(-50%);
+    font-size: 48px;
+    color: #c7b8ea;
+    cursor: pointer;
+    z-index: 1000;
+    background-color: transparent;
+    border-radius: 50px;
+    padding: 4px;
+    margin: 0 10px;
   }
 
   .footer__list {
