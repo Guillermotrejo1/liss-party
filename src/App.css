@@ -225,13 +225,7 @@ header {
   align-items: center;
 }
 
-.arrow {
-  position: absolute;
-  font-size: 50px;
-  bottom: -170px;
-  color: #c7b8ea;
-  animation: bounce 1s infinite;
-}
+
 
 /* need to make the arrow show on mount */
 
@@ -378,7 +372,6 @@ header {
 }
 
 .menu--open {
-  max-height: 100vh;
   overflow: hidden;
 }
 
@@ -424,10 +417,7 @@ header {
   transform: scale(1.1);
   color: #c7b8ea;
 }
-.menu__list a:hover {
-  transform: scale(1.1);
-  color: #c7b8ea;
-}
+
 
 /* PINATAS */
 

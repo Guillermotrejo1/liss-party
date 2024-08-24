@@ -1,15 +1,23 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation,} from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGem, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { useEffect } from "react";
 
 function BurgerMenu() {
-    function openMenu () {
-        document.body.classList += " menu--open"
-    }
+  const location = useLocation();
+  
+  function openMenu() {
+    document.body.classList += " menu--open";
+  }
 
-    function closeMenu () {
-        document.body.classList.remove("menu--open")
-    }
+  function closeMenu() {
+    document.body.classList.remove("menu--open");
+
+  }
+
+  useEffect(() => {
+    closeMenu();
+  }, [location]);
 
   return (
     <nav>
@@ -18,9 +26,12 @@ function BurgerMenu() {
           <FontAwesomeIcon icon={faGem} />
         </button>
         <div className="menu__backdrop">
-            <button className="burger__btn burger__btn--close" onClick={closeMenu}>
-                <FontAwesomeIcon icon={faTimes} />
-            </button>
+          <button
+            className="burger__btn burger__btn--close"
+            onClick={closeMenu}
+          >
+            <FontAwesomeIcon icon={faTimes} />
+          </button>
           <ul className="menu__links">
             <li className="menu__list">
               <Link to="/Pinatas">Piñatas</Link>
