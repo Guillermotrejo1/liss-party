@@ -48,14 +48,14 @@ function Landing() {
                   data-aos="fade-right"
                   data-aos-delay="400"
                 >
-                  My name is <span className="highlighted">Lisseth</span>, and my goal is to bring your ideas to life while taking away the <span className="highlighted">stress and labor of decorating</span>, allowing you to focus on what matters most - <span className="highlighted">enjoying your special moments and creating unforgettable memories.</span>
+                  Hello! My name is <span className="highlighted">Lisseth</span>, and my goal is to bring your ideas to life while taking away the <span className="highlighted">stress and labor of decorating</span>, allowing you to focus on what matters most - <span className="highlighted">enjoying your special moments and creating unforgettable memories.</span>
                 </p>
                 <button
                   className="request__btn"
                   data-aos="fade-up"
                   data-aos-delay="300"
                 >
-                  Let's create
+                  Let's Create
                 </button>
               </div>
               <figure
