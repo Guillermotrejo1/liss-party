@@ -9,7 +9,7 @@ function Decorations() {
     <section id="Decorations" data-aos="fade-up" data-aos-delay="400">
       <div className="header__container">
         <div className="header__description">
-          <div className="header__title pinata__title">Decorations</div>
+          <div className="header__title pinata__title">~ Decorations ~</div>
         </div>
         <div className="card__container">
           <div data-aos="flip-left">

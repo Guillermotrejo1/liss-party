@@ -894,7 +894,7 @@ footer {
     border-radius: 14px;
     font-weight: bold;
     width: 150px;
-    margin: 40px 0;
+    margin: 20px 0;
     font-size: 16px;
   }
 
@@ -904,13 +904,14 @@ footer {
 
   .intro__text {
     font-size: 14px;
+    margin-top: 20px;
   }
   
   .img__wrapper {
     display: flex;
     justify-content: center;
     width: 50%;
-    margin: 24px 14px 0 14px;
+    margin: 48px;
     align-items: center;
 }
 

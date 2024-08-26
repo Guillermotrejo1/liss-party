@@ -9,7 +9,7 @@ function Shirts() {
     <section id="Shirts" data-aos="fade-in" data-aos-delay="400">
       <div className="header__container">
         <div className="header__description">
-          <div className="header__title pinata__title">Shirts</div>
+          <div className="header__title pinata__title">~ Shirts ~</div>
         </div>
         <div className="card__container">
         <div data-aos="flip-left">
