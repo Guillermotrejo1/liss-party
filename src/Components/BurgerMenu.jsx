@@ -32,6 +32,7 @@ function BurgerMenu() {
           >
             <FontAwesomeIcon icon={faTimes} />
           </button>
+          <div className="pointer__triangle"></div>
           <ul className="menu__links">
             <li className="menu__list">
               <Link to="/Pinatas">Piñatas</Link>
