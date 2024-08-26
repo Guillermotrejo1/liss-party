@@ -10,6 +10,8 @@ html, body {
   background-color: lavender;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  padding: 0;
+  margin: 0;
 }
 
 :root {

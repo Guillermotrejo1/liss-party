@@ -885,7 +885,7 @@ footer {
     transition: all 300ms ease;
     opacity: 0;
     transform: translate(100%);
-    position: absolute;
+    position: fixed;
     overflow: hidden;
   }
 
@@ -893,6 +893,11 @@ footer {
     display: flex;
     border: none;
   }
+
+  .burger__btn--close {
+    right: 0;
+  }
+
 
   /* HEADER */
 
