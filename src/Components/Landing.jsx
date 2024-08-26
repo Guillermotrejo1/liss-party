@@ -1,8 +1,8 @@
 import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-import decoration1 from "../assets/decor/decor1.jpg";
-import myLogo from "../assets/jem2.png";
+import introImage from "../assets/jemintro.png"
+import myLogo from "../assets/jem2.png"
 
 function Landing() {
   return (
@@ -63,7 +63,7 @@ function Landing() {
                 data-aos="fade-left"
                 data-aos-delay="400"
               >
-                <img className="jem__img" src={decoration1} alt="" />
+                <img className="jem__img" src={introImage} alt="" />
               </figure>
             </div>
           </div>
