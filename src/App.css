@@ -768,6 +768,25 @@ footer {
   background-color: transparent;
 }
 
+.arrow {
+  color: rgba(4, 4, 148, 1);
+  font-size: 28px;
+  padding-top: 32px;
+  animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
 .footer__list {
   display: flex;
   justify-content: center;
