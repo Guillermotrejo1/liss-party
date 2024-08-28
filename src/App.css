@@ -96,15 +96,14 @@ header {
   display: flex;
   justify-content: center;
   width: 50%;
-
   margin: 0 14px;
 }
 
 .jem__img {
   width: 100%;
   max-height: 400px;
-  padding: 24px;
-  background-color: pink;
+  box-shadow: 0px 0 20px 10px rgba(255, 182, 193, 1);
+  border-radius: 10px;
 }
 
 .intro__title {
@@ -460,7 +459,7 @@ header {
 .card {
   background-color: transparent;
   border-radius: 15px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0 20px 10px rgba(255, 182, 193, 1);
   overflow: hidden;
   width: 300px;
   max-height: 400px;
@@ -476,8 +475,6 @@ header {
 
 .card__img {
   width: 100%;
-  border: 10px solid lightpink;
-  box-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
   position: relative;
 }
 
@@ -922,7 +919,6 @@ footer {
   .burger__btn--close {
     right: 0;
   }
-
 
   /* HEADER */
 
