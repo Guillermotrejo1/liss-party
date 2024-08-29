@@ -59,7 +59,7 @@ function GarlandsPage() {
       {isLoading ? (
         <div className="gallery__container">
           {Object.values(images).map((image, index) => (
-            <Skeleton key={index} width={300} height={200} borderRadius={50} />
+            <Skeleton key={index} width={300} height={250} borderRadius={50} />
           ))}
         </div>
       ) : (

@@ -479,7 +479,6 @@ header {
 }
 
 .link__btn {
-  margin: 100px;
   padding: 15px 40px;
   border: none;
   outline: none;
@@ -488,10 +487,11 @@ header {
   position: relative;
   z-index: 0;
   border-radius: 12px;
-  top: 15%;
+  top: 40%;
   font-weight: bold;
   font-size: 16px;
 }
+
 .link__btn::after {
   content: "";
   z-index: -1;
