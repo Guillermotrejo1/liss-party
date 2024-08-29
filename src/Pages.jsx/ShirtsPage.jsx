@@ -50,7 +50,7 @@ function ShirtsPage() {
 
   return (
     <>
-      <Banner title="Shirts" backgroundImage={shirtsImg} />
+      <Banner title="Shirts" />
       <h1 className="pages__header">Welcome to the Shirts page</h1>
       <Link to="/">
         <button className="back__btn">

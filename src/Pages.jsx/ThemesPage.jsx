@@ -50,7 +50,7 @@ function ThemesPage() {
 
   return (
     <>
-      <Banner title="Themes" backgroundImage={themesImg} />
+      <Banner title="Themes" />
       <h1 className="pages__header">Welcome to the Themes page</h1>
       <Link to="/">
         <button className="back__btn">

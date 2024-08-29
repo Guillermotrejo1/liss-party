@@ -50,7 +50,7 @@ function DecorationsPage() {
 
   return (
     <>
-      <Banner title="Decorations" backgroundImage={decorImg} />
+      <Banner title="Decorations" />
       <h1 className="pages__header">Welcome to the Decorations page</h1>
       <Link to="/">
         <button className="back__btn">

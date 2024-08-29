@@ -56,7 +56,7 @@ function PinatasPage() {
 
   return (
     <>
-      <Banner title="Piñatas" backgroundImage={pinataImg} />
+      <Banner title="Piñatas" />
       <h1 className="pages__header">Welcome to the Piñatas page</h1>
       <Link to="/">
         <button className="back__btn">

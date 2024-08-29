@@ -50,7 +50,7 @@ function GarlandsPage() {
 
   return (
     <>
-      <Banner title="Garlands" backgroundImage={garlandsImg} />
+      <Banner title="Garlands" />
       <h1 className="pages__header">Welcome to the Garlands page</h1>
       <Link to="/">
         <button className="back__btn">
