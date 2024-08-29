@@ -11,6 +11,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import decorImages from "../assets/decor/decorImages.jsx";
+import decorImg from "../assets/decorImg.jpg"
 
 function DecorationsPage() {
   const [isLoading, setIsLoading] = useState(true);
@@ -49,7 +50,7 @@ function DecorationsPage() {
 
   return (
     <>
-      <Banner title="Decorations" />
+      <Banner title="Decorations" backgroundImage={decorImg} />
       <h1 className="pages__header">Welcome to the Decorations page</h1>
       <Link to="/">
         <button className="back__btn">

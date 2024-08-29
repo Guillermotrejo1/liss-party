@@ -5,6 +5,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 
 function Footer() {
+
+  const handleScrollToTop = () => {
+    window.scrollTo(0, 0);
+  };
+
   return (
     <footer>
       <div className="footer_container">
@@ -15,8 +20,8 @@ function Footer() {
             data-aos-delay="300"
           >
             <img src={myLogo} alt="" className="footer__img" />
-            <Link to="/">
-              <div className="arrow">
+            <Link to="">
+              <div className="arrow" onClick={handleScrollToTop}>
                 <FontAwesomeIcon icon={faArrowUp} />
               </div>
             </Link>

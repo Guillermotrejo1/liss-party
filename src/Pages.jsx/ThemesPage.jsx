@@ -11,6 +11,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import themesImages from "../assets/themes/themesImages.jsx";
+import themesImg from "../assets/themesImg.jpg"
 
 function ThemesPage() {
   const [isLoading, setIsLoading] = useState(true);
@@ -49,7 +50,7 @@ function ThemesPage() {
 
   return (
     <>
-      <Banner title="Themes" />
+      <Banner title="Themes" backgroundImage={themesImg} />
       <h1 className="pages__header">Welcome to the Themes page</h1>
       <Link to="/">
         <button className="back__btn">

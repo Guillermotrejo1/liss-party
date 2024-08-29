@@ -11,6 +11,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import pinataImages from "../assets/pinatas/pinatasImages.jsx";
+import pinataImg from "../assets/pinataimg.jpg";
 import Aos from "aos";
 import "aos/dist/aos.css";
 
@@ -55,7 +56,7 @@ function PinatasPage() {
 
   return (
     <>
-      <Banner title="Piñatas" />
+      <Banner title="Piñatas" backgroundImage={pinataImg} />
       <h1 className="pages__header">Welcome to the Piñatas page</h1>
       <Link to="/">
         <button className="back__btn">
