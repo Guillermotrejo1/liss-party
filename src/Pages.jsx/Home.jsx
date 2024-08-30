@@ -8,6 +8,7 @@ import Garlands from '../Components/Garlands'
 import Decorations from '../Components/Decorations'
 import Footer from '../Components/Footer'
 import Shirts from '../Components/Shirts'
+import Contact from '../Components/UI/Contact'
 
 function Home() {
   
@@ -15,6 +16,7 @@ function Home() {
     <>
     <Nav />
     <BurgerMenu />
+    <Contact/>
     <Landing/>
     <Piñatas/>
     <Themes/>

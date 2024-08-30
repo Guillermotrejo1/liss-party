@@ -67,12 +67,6 @@ function Landing() {
               </figure>
             </div>
           </div>
-          {/* <div className="display">
-            <p className="display__text">Here's a display of some of my work</p>
-            <div className="arrow">
-              <FontAwesomeIcon icon={faArrowDown} />
-            </div>
-          </div> */}
         </div>
       </header>
     </section>

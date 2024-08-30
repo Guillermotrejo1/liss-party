@@ -11,7 +11,6 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import shirtsImages from "../assets/shirts/shirtsImages.jsx";
-import shirtsImg from "../assets/shirtsImg.jpg"
 
 function ShirtsPage() {
   const [isLoading, setIsLoading] = useState(true);
@@ -50,8 +49,7 @@ function ShirtsPage() {
 
   return (
     <>
-      <Banner title="Shirts" />
-      <h1 className="pages__header">Welcome to the Shirts page</h1>
+      <Banner title="Welcome to the Shirts page" />
       <Link to="/">
         <button className="back__btn">
           <FontAwesomeIcon icon={faArrowLeft} />

@@ -11,7 +11,6 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import garlandImages from "../assets/garlands/garlandImages.jsx";
-import garlandsImg from "../assets/garlandsImg.jpg"
 
 function GarlandsPage() {
   const [isLoading, setIsLoading] = useState(true);
@@ -50,8 +49,7 @@ function GarlandsPage() {
 
   return (
     <>
-      <Banner title="Garlands" />
-      <h1 className="pages__header">Welcome to the Garlands page</h1>
+      <Banner title="Welcome to the Garlands page" />
       <Link to="/">
         <button className="back__btn">
           <FontAwesomeIcon icon={faArrowLeft} />
