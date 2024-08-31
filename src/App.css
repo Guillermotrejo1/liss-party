@@ -1023,6 +1023,9 @@ footer {
     right: 0;
   }
 
+  .diamond__wrapper {
+    margin: 14px 0 48px 0;
+  }
   /* HEADER */
 
   .header__container {
