@@ -1022,10 +1022,19 @@ footer {
   .burger__btn--close {
     right: 0;
   }
+ 
+  /* DIAMOND */
 
   .diamond__wrapper {
     margin: 14px 0 48px 0;
   }
+
+  /* CONTACT */
+  
+  .contact__box {
+    min-width: 300px;
+  }
+
   /* HEADER */
 
   .header__container {
