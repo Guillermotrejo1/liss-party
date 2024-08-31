@@ -1045,7 +1045,7 @@ footer {
     max-height: 300px;
     padding: 8px;
     background-color: pink;
-    margin: 48px;
+    margin-top: 48px;
   }
 
   .request__btn {
