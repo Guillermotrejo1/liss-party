@@ -1,4 +1,4 @@
-import { faTimes } from "@fortawesome/free-solid-svg-icons";
+import { faSpinner, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
@@ -7,27 +7,25 @@ import { closeModal } from "../../redux/modalSlice";
 function Contact() {
   const isOpen = useSelector((state) => state.modal.isOpen);
   const dispatch = useDispatch();
-  const [userData, setUserData] = useState(
-    {
-      Name: "", Email: "", tel: "", Requests: ""
-    }
-  )
- 
-  let name, value
-  const data = (e) => 
-  {
-    name = e.target.name
-    value = e.target.value
-    setUserData({...userData, [name]:value})
-  }
+  const [userData, setUserData] = useState({
+    Name: "",
+    Email: "",
+    tel: "",
+    Requests: "",
+  });
+
+  let name, value;
+  const data = (e) => {
+    name = e.target.name;
+    value = e.target.value;
+    setUserData({ ...userData, [name]: value });
+  };
 
   const handleCloseModal = () => {
     dispatch(closeModal());
   };
-  
 
   if (!isOpen) return null;
-
 
   return (
     <div className="contact__container">
@@ -72,6 +70,9 @@ function Contact() {
             <button className="contact__close--btn" onClick={handleCloseModal}>
               <FontAwesomeIcon icon={faTimes} />
             </button>
+          <div className="contact__overlay contact__overlay--loading">
+            <FontAwesomeIcon icon={faSpinner} className="spinner__icon"/>
+          </div>
           </div>
         </>
       )}

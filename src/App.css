@@ -773,7 +773,6 @@ header {
   position: relative;
   width: 40%;
   height: 50%;
-
 }
 
 form {
@@ -786,6 +785,7 @@ input {
   border: none;
   outline: none;
   border-bottom: 1px solid black;
+  transition: all 300ms ease;
 }
 
 input:hover {
@@ -835,6 +835,36 @@ textarea {
   color: purple;
   cursor: pointer;
   border: none;
+}
+
+.contact__overlay--loading {
+  background-color: white;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  font-size: 80px;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: lightpink;
+  z-index: -1;
+}
+
+.spinner__icon{
+  animation: spinner 750ms infinite linear;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+
+  
 }
 
 /* SCROLL-BAR */
