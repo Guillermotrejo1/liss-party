@@ -73,6 +73,9 @@ function Contact() {
           <div className="contact__overlay contact__overlay--loading">
             <FontAwesomeIcon icon={faSpinner} className="spinner__icon"/>
           </div>
+          <div className="contact__overlay contact__overlay--success">
+            Thanks for the message! I will reach out to you soon.
+          </div>
           </div>
         </>
       )}

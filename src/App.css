@@ -837,22 +837,33 @@ textarea {
   border: none;
 }
 
-.contact__overlay--loading {
-  background-color: white;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  font-size: 80px;
+.contact__overlay {
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: lightpink;
-  z-index: -1;
+  position: absolute;
+
+}
+
+.contact__overlay--loading {
+  background-color: white;
+  font-size: 80px;
+}
+
+.contact__overlay--success {
+  background-color: #00ffd5;
+  font-size: 40px;
+  font-weight: 700;
+  text-align: center;
 }
 
 .spinner__icon{
+  color: lightpink;
+
   animation: spinner 750ms infinite linear;
 }
 
