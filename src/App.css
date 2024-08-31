@@ -1045,6 +1045,7 @@ footer {
     max-height: 300px;
     padding: 8px;
     background-color: pink;
+    margin: 48px;
   }
 
   .request__btn {
@@ -1066,6 +1067,7 @@ footer {
   .intro__text {
     font-size: 14px;
     margin-top: 20px;
+    line-height: none;
   }
 
   .img__wrapper {
