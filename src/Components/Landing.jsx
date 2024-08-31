@@ -1,10 +1,19 @@
-import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import introImage from "../assets/jemintro.png"
 import myLogo from "../assets/jem2.png"
+import { useDispatch, useSelector } from "react-redux";
+import { openModal } from "../redux/modalSlice";
+import Contact from "./UI/Contact";
 
 function Landing() {
+  const isOpen = useSelector((state) => state.modal.isOpen); // Select the isOpen state
+const dispatch = useDispatch(); // Get the dispatch function
+
+const handleOpen = () => {
+dispatch(openModal()); // Dispatch the openModal action on button click
+};
+
+  
   return (
     <section id="Landing">
       <header>
@@ -54,9 +63,11 @@ function Landing() {
                   className="request__btn"
                   data-aos="fade-up"
                   data-aos-delay="300"
+                  onClick={handleOpen}
                 >
                   Let's Create
                 </button>
+                {isOpen && <Contact />}
               </div>
               <figure
                 className="img__wrapper"
