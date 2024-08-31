@@ -793,7 +793,7 @@ input:hover {
 }
 
 textarea {
-  resize: none;
+  resize: vertical;
   border: none;
   border-bottom: 1px solid black;
   margin-top: 20px;
