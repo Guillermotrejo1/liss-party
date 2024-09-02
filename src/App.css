@@ -863,6 +863,10 @@ textarea {
   z-index: -1;
 }
 
+.contact__overlay--visible {
+  z-index: 1;
+}
+
 .spinner__icon{
   color: lightpink;
 

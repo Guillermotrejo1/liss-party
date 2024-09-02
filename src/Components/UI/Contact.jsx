@@ -3,7 +3,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { closeModal } from "../../redux/modalSlice";
-import emailjs from '@emailjs/browser';
+import emailjs from "@emailjs/browser";
+
+// const success = document.querySelector(".contact__overlay--success")
+//     const loading = document.querySelector(".contact__overlay--loading")
+//     isOpen.classList += " contact__overlay--visible"
 
 function Contact() {
   const isOpen = useSelector((state) => state.modal.isOpen);
@@ -14,8 +18,10 @@ function Contact() {
     tel: "",
     Requests: "",
   });
+  const [overlayState, setOverlayState] = useState("");
 
   let name, value;
+
   const data = (e) => {
     name = e.target.name;
     value = e.target.value;
@@ -28,10 +34,11 @@ function Contact() {
 
   function contacted(event) {
     event.preventDefault();
-    console.log(event.target);
+    setOverlayState("loading");
     const templateParams = {
       user_name: userData.Name,
       user_email: userData.Email,
+      tel: userData.tel,
       message: userData.Requests,
     };
     emailjs
@@ -43,13 +50,17 @@ function Contact() {
       )
       .then(() => {
         console.log("it worked");
+        setOverlayState("success"); 
+        setTimeout(() => {
+          setOverlayState(""); 
+        }, 3000);
+        setUserData({ Name: "", Email: "", tel: "", Requests: "" });
       })
       .catch(() => {
         alert("this email service is temporarily unavailable.");
+        setOverlayState(""); 
       });
   }
-  
-  
 
   if (!isOpen) return null;
 
@@ -96,12 +107,20 @@ function Contact() {
             <button className="contact__close--btn" onClick={handleCloseModal}>
               <FontAwesomeIcon icon={faTimes} />
             </button>
-          <div className="contact__overlay contact__overlay--loading">
-            <FontAwesomeIcon icon={faSpinner} className="spinner__icon"/>
-          </div>
-          <div className="contact__overlay contact__overlay--success">
-            Thanks for the message! I will reach out to you soon.
-          </div>
+            <div
+              className={`contact__overlay contact__overlay--loading ${
+                overlayState === "loading" ? "contact__overlay--visible" : ""
+              }`}
+            >
+              <FontAwesomeIcon icon={faSpinner} className="spinner__icon" />
+            </div>
+            <div
+              className={`contact__overlay contact__overlay--success ${
+                overlayState === "success" ? "contact__overlay--visible" : ""
+              }`}
+            >
+              Thanks for the message! I will reach out to you soon.
+            </div>
           </div>
         </>
       )}
