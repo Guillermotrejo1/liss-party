@@ -5,7 +5,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { closeModal } from "../../redux/modalSlice";
 import emailjs from '@emailjs/browser';
 
-
 function Contact() {
   const isOpen = useSelector((state) => state.modal.isOpen);
   const dispatch = useDispatch();
@@ -15,11 +14,6 @@ function Contact() {
     tel: "",
     Requests: "",
   });
-  const emailConfig = { // Define emailConfig
-    serviceID: 'service_l3n5q49',
-    templateID: 'template_eaf20gs',
-    userID: '6lwnRd44-s_j_aSGk',
-  };
 
   let name, value;
   const data = (e) => {
@@ -32,33 +26,30 @@ function Contact() {
     dispatch(closeModal());
   };
 
-  const sendEmail = (e) => {
-    e.preventDefault();
+  function contacted(event) {
+    event.preventDefault();
+    console.log(event.target);
     const templateParams = {
-      from_name: userData.Name,
-      from_email: userData.Email,
-      phone: userData.tel,
+      user_name: userData.Name,
+      user_email: userData.Email,
       message: userData.Requests,
     };
-
     emailjs
       .send(
-        emailConfig.serviceID,
-        emailConfig.templateID,
+        "service_l3n5q49",
+        "template_eaf20gs",
         templateParams,
-        emailConfig.userID
+        "6lwnRd44-s_j_aSGk"
       )
-      .then((response) => {
-        console.log("Email sent successfully:", response);
-        // Show success message
-        document.querySelector(".contact__overlay--success").style.display =
-          "block";
+      .then(() => {
+        console.log("it worked");
       })
-      .catch((error) => {
-        console.error("Error sending email:", error);
+      .catch(() => {
+        alert("this email service is temporarily unavailable.");
       });
-      console.log("it worked")
-  };
+  }
+  
+  
 
   if (!isOpen) return null;
 
@@ -67,7 +58,7 @@ function Contact() {
       {isOpen && (
         <>
           <div className="contact__box">
-            <form>
+            <form onSubmit={contacted}>
               <input
                 type="text"
                 name="Name"
@@ -100,19 +91,17 @@ function Contact() {
                 onChange={data}
                 id=""
               ></textarea>
-              <button className="submit__btn" onClick={(e) => sendEmail(e)}>
-                Submit
-              </button>
+              <button className="submit__btn">Submit</button>
             </form>
             <button className="contact__close--btn" onClick={handleCloseModal}>
               <FontAwesomeIcon icon={faTimes} />
             </button>
-            <div className="contact__overlay contact__overlay--loading">
-              <FontAwesomeIcon icon={faSpinner} className="spinner__icon" />
-            </div>
-            <div className="contact__overlay contact__overlay--success">
-              Thanks for the message! I will reach out to you soon.
-            </div>
+          <div className="contact__overlay contact__overlay--loading">
+            <FontAwesomeIcon icon={faSpinner} className="spinner__icon"/>
+          </div>
+          <div className="contact__overlay contact__overlay--success">
+            Thanks for the message! I will reach out to you soon.
+          </div>
           </div>
         </>
       )}
