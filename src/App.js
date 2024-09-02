@@ -9,6 +9,9 @@ import ShirtsPage from "./Pages.jsx/ShirtsPage";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+//template_eaf20gs template iId
+//service_l3n5q49 serveice Id
+//6lwnRd44-s_j_aSGk public key
 
 function App() {
   useEffect(() => {

@@ -852,6 +852,7 @@ textarea {
 .contact__overlay--loading {
   background-color: white;
   font-size: 80px;
+  z-index: -1;
 }
 
 .contact__overlay--success {
@@ -859,6 +860,7 @@ textarea {
   font-size: 40px;
   font-weight: 700;
   text-align: center;
+  z-index: -1;
 }
 
 .spinner__icon{
