@@ -112,7 +112,7 @@ function Contact() {
             </div>
             <div
               className={`contact__overlay contact__overlay--success ${
-                overlayState === "success" ? "contact__overlay--visible" : ""
+                overlayState === "success" ? "contact__overlay--complete" : ""
               }`}
             >
               Thanks for the message! I will reach out to you soon.
