@@ -82,7 +82,7 @@ function PinatasPage() {
       {isOpen && (
         <div className="lightbox">
           <button
-            className="lightbox__arrow--left"
+            className="lightbox__arrow--left click"
             onClick={() => handleClick("left")}
           >
             <FontAwesomeIcon icon={faArrowLeft} />
@@ -98,7 +98,7 @@ function PinatasPage() {
             </button>
           </div>
           <button
-            className="lightbox__arrow--right"
+            className="lightbox__arrow--right click"
             onClick={() => handleClick("right")}
           >
             <FontAwesomeIcon icon={faArrowRight} />
