@@ -566,23 +566,18 @@ header {
   position: relative;
 }
 
-.credit {
+.wave__bg {
+  background-image: url('/public/wave2.svg');
+  background-repeat: repeat-x;
+  background-color: lavender;
+  width: 100vw;
+  height: 20px;
   position: absolute;
-  bottom: 10px;
-  right: 10px;
-  font-size: 12px;
-  color: #fff;
-  opacity: 0.5;
-  text-decoration: none;
-}
-
-.credit a:hover {
-  opacity: 1;
 }
 
 .banner__title {
   font-size: 40px;
-  color: rgba(4, 4, 148, 1);
+  color: #6107C8;
 }
 
 .back__btn {
@@ -596,7 +591,7 @@ header {
   top: 10%;
   left: 1%;
   cursor: pointer;
-  color: rgba(4, 4, 148, 1);
+  color: #6107C8;
 }
 
 .back__btn:hover {
@@ -916,7 +911,7 @@ footer {
 }
 
 .arrow {
-  color: rgba(4, 4, 148, 1);
+  color: #6107C8;
   font-size: 28px;
   padding-top: 32px;
   animation: bounce 1.5s infinite;
@@ -945,6 +940,7 @@ footer {
   font-size: 18px;
   text-decoration: none;
   padding: 0 12px;
+  font-weight: 700;
   color: #fff;
 }
 

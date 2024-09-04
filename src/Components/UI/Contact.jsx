@@ -5,10 +5,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { closeModal } from "../../redux/modalSlice";
 import emailjs from "@emailjs/browser";
 
-// const success = document.querySelector(".contact__overlay--success")
-//     const loading = document.querySelector(".contact__overlay--loading")
-//     isOpen.classList += " contact__overlay--visible"
-
 function Contact() {
   const isOpen = useSelector((state) => state.modal.isOpen);
   const dispatch = useDispatch();
@@ -49,7 +45,7 @@ function Contact() {
         "6lwnRd44-s_j_aSGk"
       )
       .then(() => {
-        console.log("it worked");
+        console.log("it worked"); //remove this later its just for debugging
         setOverlayState("success"); 
         setTimeout(() => {
           setOverlayState(""); 
