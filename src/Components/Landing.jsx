@@ -1,5 +1,6 @@
 import React from "react";
 import introImage from "../assets/jemintro.png"
+import introImage2 from "../assets/decor/decor5.jpg"
 import myLogo from "../assets/jem2.png"
 import { useDispatch, useSelector } from "react-redux";
 import { openModal } from "../redux/modalSlice";
@@ -74,7 +75,7 @@ dispatch(openModal()); // Dispatch the openModal action on button click
                 data-aos="fade-left"
                 data-aos-delay="400"
               >
-                <img className="jem__img" src={introImage} alt="" />
+                <img className="jem__img" src={introImage2} alt="" />
               </figure>
             </div>
           </div>
