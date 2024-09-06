@@ -100,7 +100,6 @@ header {
   flex-direction: column;
   justify-content: center;
   width: 50%;
-  max-height: 400px;
   margin: 0 14px;
   align-items: center;
 }
@@ -1011,6 +1010,15 @@ footer {
     display: flex;
   }
 
+  .intro__wrapper {
+    width: 40%;
+  }
+
+  .img__wrapper {
+    align-items: center;
+    width:60%
+  }
+
   /* HEADER */
 
   .intro__title {
@@ -1018,7 +1026,7 @@ footer {
   }
 
   .intro__text {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .header__container {
@@ -1158,7 +1166,6 @@ footer {
     display: flex;
     justify-content: center;
     width: 50%;
-    margin: 48px;
     align-items: center;
   }
 
