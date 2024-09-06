@@ -1017,7 +1017,7 @@ footer {
   .menu__backdrop {
     background-color: #6107C8;
     border-radius: 20px;
-    top: 5%;
+    top: 8%;
     left: 50%;
     width: 50%;
     height: 40%;
@@ -1034,7 +1034,7 @@ footer {
 
   .pointer__triangle {
     top: -9px;
-    left: 90%;
+    left: 89%;
   }
 
   .intro__wrapper {
