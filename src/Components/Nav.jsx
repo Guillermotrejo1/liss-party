@@ -9,7 +9,7 @@ function Nav() {
             <li className="nav__list">Piñatas</li>
           </a>
           <a href="#Themes">
-            <li className="nav__list">Themes</li>
+            <li className="nav__list">Party Packages</li>
           </a>
           <a href="#Garlands">
             <li className="nav__list">Garlands</li>
