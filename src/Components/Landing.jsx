@@ -1,10 +1,13 @@
 import React from "react";
-import introImage from "../assets/jemintro.png"
+// import introImage from "../assets/jemintro.png"
 import introImage2 from "../assets/decor/decor5.jpg"
 import myLogo from "../assets/jem2.png"
 import { useDispatch, useSelector } from "react-redux";
 import { openModal } from "../redux/modalSlice";
 import Contact from "./UI/Contact";
+import RubyDiamond from "./RubyDiamond";
+import Diamond from "./Diamond.jsx"
+import AmethystDiamond  from "./AmethystDiamond.jsx"
 
 function Landing() {
   const isOpen = useSelector((state) => state.modal.isOpen); // Select the isOpen state
@@ -39,9 +42,9 @@ dispatch(openModal()); // Dispatch the openModal action on button click
             data-aos="fade-in"
             data-aos-delay="200"
           >
-            <div className="diamond__ruby"></div>
-            <div className="diamond"></div>
-            <div className="diamond__amethyst"></div>
+            <RubyDiamond/>
+            <Diamond/>
+            <AmethystDiamond/>
           </div>
           <div className="header__intro">
             <div className="header__wrapper">
