@@ -108,7 +108,7 @@ const RubyDiamond = () => {
     function animate() {
       requestAnimationFrame(animate);
       // Rotate smoothly to show the 3D depth
-      diamond.rotation.y += 0.01;
+      diamond.rotation.y -= 0.01;
     //   diamond.rotation.x = Math.sin(Date.now() * 0.001) * 0.2;
       renderer.setSize(280, 220);
       renderer.render(scene, camera);
