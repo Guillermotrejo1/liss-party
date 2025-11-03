@@ -81,9 +81,7 @@ const RubyDiamond = () => {
     });
 
     const diamond = new THREE.Mesh(geometry, material);
-    diamond.scale.set(1.5, 1.5, 1.5);
-
-    // Enhanced lighting for better 3D appearance
+      diamond.scale.set(1.5, 1.5, 1.5);    // Enhanced lighting for better 3D appearance
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
     
     // Key light from front

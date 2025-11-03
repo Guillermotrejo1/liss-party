@@ -6,6 +6,21 @@
   border-radius: 9999px;
 }
 
+/* Styles for the diamond canvas */
+canvas {
+  width: 280px !important;
+  height: 220px !important;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  canvas {
+    width: 250px !important;
+    height: 165px !important;
+    transform: scale(1.00);
+  }
+}
+
 .nav__links {
   display: flex;
   justify-content: space-around;
@@ -254,10 +269,43 @@ header {
 
 .diamond__wrapper {
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
-  justify-content: space-evenly;
-  margin: 32px 0;
+  margin: 32px auto;
+  width: 100%;
+  max-width: 900px;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+.diamond__wrapper > div {
+  flex: 0 0 auto;
+  width: calc(33.33% - 20px);
+  min-width: 100px;
+  max-width: 280px;
+}
+
+@media (max-width: 768px) {
+  .diamond__wrapper {
+    padding: 0 10px;
+    gap: 10px;
+  }
+  .diamond__wrapper > div {
+    width: calc(33.33% - 10px);
+    min-width: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .diamond__wrapper {
+    padding: 0 5px;
+    gap: 5px;
+  }
+  .diamond__wrapper > div {
+    width: calc(33.33% - 5px);
+    min-width: 60px;
+  }
 }
 
 .diamond {
@@ -1055,6 +1103,13 @@ footer {
   .intro__text {
     font-size: 18px;
   }
+
+  .header__intro {
+  margin-top: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
   .header__container {
     margin-top: 60px;
