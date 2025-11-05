@@ -1,7 +1,9 @@
 import React, { useEffect, useRef } from "react";
 import ShowcaseVideo from "../assets/showcase-video.mp4";
+
 const Showcase = () => {
   const videoRef = useRef(null);
+
   useEffect(() => {
     // Respect reduced motion & save-data
     try {
@@ -12,29 +14,38 @@ const Showcase = () => {
         return;
       }
     } catch (e) {}
+
     const vid = videoRef.current;
     if (!vid) return;
-    const handlePlay = () => {
+
+    const handlePlay = async () => {
       try {
-        vid.play();
-      } catch (e) {}
+        await vid.play();
+      } catch (e) {
+        // autoplay blocked or other play error - ignore
+      }
     };
-    const obs = new IntersectionObserver((entries) => {
+
+    // Observe the container element (avoids false negatives when video has small bounding box)
+    const container = vid.closest('.showcase__container') || vid.parentElement || document.querySelector('.showcase__container');
+    const io = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          // play when visible
           handlePlay();
         } else {
-          // pause when offscreen
-          vid.pause();
+          try { vid.pause(); } catch (e) {}
         }
       });
-    }, {
-      threshold: 0.25,
-    });
-    obs.observe(vid);
-    return () => obs.disconnect();
+    }, { threshold: 0.1, rootMargin: '100px' });
+
+    if (container) io.observe(container);
+
+    return () => {
+      io.disconnect();
+      try { vid.pause(); } catch (e) {}
+    };
   }, []);
+
   return (
     <div className="showcase__container">
       <video
@@ -45,8 +56,7 @@ const Showcase = () => {
         muted
         loop
         playsInline
-        onLoadStart={() => console.log('Video loading started')}
-        onCanPlay={() => console.log('Video can play')}
+        autoPlay
       >
         <source src={ShowcaseVideo} type="video/mp4" />
         Your browser does not support the video tag.
@@ -54,4 +64,5 @@ const Showcase = () => {
     </div>
   );
 };
+
 export default Showcase;
