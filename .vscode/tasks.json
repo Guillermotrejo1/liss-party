@@ -1,0 +1,13 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Analyze bundle with source-map-explorer",
+			"type": "shell",
+			"command": "npx source-map-explorer build/static/js/*.js",
+			"args": [],
+			"problemMatcher": [],
+			"group": "build"
+		}
+	]
+}
