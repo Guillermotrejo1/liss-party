@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 // import introImage from "../assets/jemintro.png"
 import introImage3 from "../assets/shirts/shirts11.jpg"
 import myLogo from "../assets/jem2.png"
@@ -10,12 +10,32 @@ import Diamond from "./Diamond.jsx"
 import AmethystDiamond  from "./AmethystDiamond.jsx"
 
 function Landing() {
-  const isOpen = useSelector((state) => state.modal.isOpen); // Select the isOpen state
-const dispatch = useDispatch(); // Get the dispatch function
+  const isOpen = useSelector((state) => state.modal.isOpen);
+  const dispatch = useDispatch();
 
-const handleOpen = () => {
-dispatch(openModal()); // Dispatch the openModal action on button click
-};
+  useEffect(() => {
+    // Function to scroll to diamond wrapper
+    const scrollToDiamonds = () => {
+      const diamondSection = document.querySelector(".diamond__wrapper");
+      if (diamondSection) {
+        const yOffset = diamondSection.getBoundingClientRect().top + window.pageYOffset;
+        window.scrollTo({
+          top: yOffset,
+          behavior: "instant" // Force immediate scroll without animation
+        });
+      }
+    };
+
+    // Execute scroll immediately
+    scrollToDiamonds();
+    // Also try again after a tiny delay to ensure all content is loaded
+    const timer = setTimeout(scrollToDiamonds, 0);
+    return () => clearTimeout(timer);
+  }, []); // Empty dependency array means this runs once on mount
+
+  const handleOpen = () => {
+    dispatch(openModal());
+  };
 
   
   return (

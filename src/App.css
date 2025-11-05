@@ -4,6 +4,7 @@
   margin: 0 auto;
   padding: 28px;
   border-radius: 9999px;
+  position: relative; /* Changed from fixed to allow proper scrolling */
 }
 
 /* Styles for the diamond canvas */
@@ -95,7 +96,6 @@ header {
 }
 
 .header__intro {
-  margin-top: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -118,6 +118,7 @@ header {
   margin: 0 14px;
   align-items: center;
 }
+
 
 .img__wrapper {
   display: flex;
