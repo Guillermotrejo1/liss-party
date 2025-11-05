@@ -1170,6 +1170,7 @@ footer {
   .nav__links {
     display: none;
   }
+  
 
   .menu__backdrop {
     background-color: #6107C8;
@@ -1255,8 +1256,17 @@ footer {
   .intro__text {
     font-size: 14px;
     margin-top: 20px;
-    line-height: none;
+    line-height: 1.8;
   }
+
+  .intro__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  margin: 0 14px;
+  align-items: center;
+}
 
   .img__wrapper {
     display: flex;
