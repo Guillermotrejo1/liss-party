@@ -1,10 +1,7 @@
-import React, { useEffect, useRef, useState } from "react";
-import ShowcaseVideoMp4 from "../assets/showcase-video.mp4";
-import ShowcaseVideoWebm from "../assets/showcase-video.webm";
+import React, { useEffect, useRef } from "react";
+import ShowcaseVideo from "../assets/showcase-video.mp4";
 const Showcase = () => {
   const videoRef = useRef(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
   useEffect(() => {
     // Respect reduced motion & save-data
     try {
@@ -22,14 +19,6 @@ const Showcase = () => {
         vid.play();
       } catch (e) {}
     };
-    const handleLoaded = () => {
-      setLoading(false);
-    };
-    const handleError = (e) => {
-      setError("Error loading video");
-    };
-    vid.addEventListener("loadeddata", handleLoaded);
-    vid.addEventListener("error", handleError);
     const obs = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -41,19 +30,13 @@ const Showcase = () => {
         }
       });
     }, {
-      threshold: 0.1,
+      threshold: 0.25,
     });
     obs.observe(vid);
-    return () => {
-      obs.disconnect();
-      vid.removeEventListener("loadeddata", handleLoaded);
-      vid.removeEventListener("error", handleError);
-    };
+    return () => obs.disconnect();
   }, []);
   return (
     <div className="showcase__container">
-      {loading && <div className="loading">Loading...</div>}
-      {error && <div className="error">{error}</div>}
       <video
         ref={videoRef}
         className="showcase__video"
@@ -62,31 +45,12 @@ const Showcase = () => {
         muted
         loop
         playsInline
+        onLoadStart={() => console.log('Video loading started')}
+        onCanPlay={() => console.log('Video can play')}
       >
-        <source src={ShowcaseVideoWebm} type="video/webm" />
-        <source src={ShowcaseVideoMp4} type="video/mp4" />
+        <source src={ShowcaseVideo} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-      <style jsx>{`
-        .showcase__video {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
-        .loading {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-        }
-        .error {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          color: red;
-        }
-      `}</style>
     </div>
   );
 };
