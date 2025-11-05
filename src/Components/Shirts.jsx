@@ -19,7 +19,7 @@ function Shirts() {
             <button className="link__btn">See More</button>
           </Link>
           <div data-aos="flip-left">
-            <Card image={shirt7} />
+            <Card image={shirt7}  />
           </div>
         </div>
       </div>

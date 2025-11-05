@@ -6,7 +6,7 @@ function Banner({ title }) {
       <div className="banner">
         <h1 className="banner__title">{title}</h1>
       </div>
-      <img className="wave__bg" src="/wave2.svg" alt="" />
+      <img className="wave__bg" src="/wave2.svg" loading="lazy" decoding="async" alt="" />
     </>
   );
 }

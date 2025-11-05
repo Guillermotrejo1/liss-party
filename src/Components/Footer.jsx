@@ -19,7 +19,7 @@ function Footer() {
             data-aos="fade-in"
             data-aos-delay="300"
           >
-            <img src={myLogo} alt="" className="footer__img" />
+            <img src={myLogo} alt="" loading="lazy" decoding="async" className="footer__img" />
             <Link to="">
               <div className="arrow" onClick={handleScrollToTop}>
                 <FontAwesomeIcon icon={faArrowUp} />

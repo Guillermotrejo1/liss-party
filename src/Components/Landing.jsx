@@ -55,7 +55,7 @@ function Landing() {
               data-aos="fade-in"
               data-aos-delay="300"
             >
-              <img src={myLogo} alt="" className="logo" />
+              <img src={myLogo} loading="lazy" decoding="async" alt="" className="logo" />
             </figure>
           <div
             className="diamond__wrapper"
@@ -98,7 +98,7 @@ function Landing() {
                 data-aos="fade-left"
                 data-aos-delay="400"
               >
-                <img className="jem__img" src={introImage3} alt="" />
+                <img className="jem__img" src={introImage3} loading="lazy" decoding="async" alt="" />
               </figure>
             </div>
           </div>

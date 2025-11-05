@@ -92,6 +92,8 @@ function PinatasPage() {
               className="modal__img"
               src={images[imgFiles[currentPageIndex]]}
               alt=""
+              loading="lazy" 
+              decoding="async"
             />
             <button className="lightbox__close--icon" onClick={handleClose}>
               <FontAwesomeIcon icon={faCircleXmark} />

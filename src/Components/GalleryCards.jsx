@@ -8,6 +8,8 @@ function GalleryCards({ images, imgFiles, isOpen, currentIndex, onOpen, onClose,
             <img
               className="gallery__img"
               src={image}
+              loading="lazy"
+              decoding="async"
               alt=""
               onClick={() => onOpen(index)}
             />
