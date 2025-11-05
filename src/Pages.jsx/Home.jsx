@@ -9,6 +9,7 @@ import Decorations from '../Components/Decorations'
 import Footer from '../Components/Footer'
 import Shirts from '../Components/Shirts'
 import Contact from '../Components/UI/Contact'
+import Showcase from '../Components/Showcase'
 
 function Home() {
   
@@ -18,6 +19,7 @@ function Home() {
     <BurgerMenu />
     <Contact/>
     <Landing/>
+    <Showcase/>
     <Piñatas/>
     <Themes/>
     <Garlands/>

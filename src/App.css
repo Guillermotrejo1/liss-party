@@ -491,6 +491,22 @@ header {
   color: #c7b8ea;
 }
 
+/*SHOWCASE*/
+ .showcase__container {
+  width: 100%;
+  max-height: 700px; /* adjust this value to your desired max height */
+  margin: 60px 0;
+  overflow: hidden;
+}
+.showcase__video {
+  width: 100%; /* changed to 100% to match parent width */
+  height: 100%; /* changed to 100% to fill parent height */
+  object-fit: cover; /* add this to maintain aspect ratio and cover the container */
+  filter: brightness(0.9) saturate(0.85) blur(0.4px);
+  pointer-events: none;
+  z-index: 0;
+}
+
 /* PINATAS */
 
 #Piñatas {
@@ -1115,6 +1131,13 @@ footer {
   .header__container {
     margin-top: 60px;
   }
+
+  .showcase__container {
+  width: 100%;
+  max-height: 450px; /* adjust this value to your desired max height */
+  margin: 60px 0;
+  overflow: hidden;
+}
 
   .card__container {
     display: flex;
