@@ -1134,7 +1134,7 @@ footer {
 
   .showcase__container {
   width: 100%;
-  max-height: 450px; /* adjust this value to your desired max height */
+  max-height: 450px; 
   margin: 60px 0;
   overflow: hidden;
 }
