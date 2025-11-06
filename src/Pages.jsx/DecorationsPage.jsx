@@ -10,13 +10,20 @@ import {
   faCircleXmark,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-import decorImages from "../assets/decor/decorImages.jsx";
+import decorData, { categories } from "../assets/decor/decorImages.jsx";
 
 function DecorationsPage() {
   const [isLoading, setIsLoading] = useState(true);
   const [currentPageIndex, setCurrentPageIndex] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
-  const imgFiles = decorImages;
+  const [selectedCategory, setSelectedCategory] = useState("ALL");
+
+  // Filter images based on selected category
+  const filteredData = selectedCategory === "ALL" 
+    ? decorData 
+    : decorData.filter(item => item.category === selectedCategory);
+
+  const imgFiles = filteredData.map(item => item.id);
 
   const images = imgFiles.reduce((acc, file) => {
     acc[file] = require(`../assets/decor/${file}.jpg`);
@@ -55,6 +62,52 @@ function DecorationsPage() {
           <FontAwesomeIcon icon={faArrowLeft} />
         </button>
       </Link>
+
+      {/* Filter Buttons */}
+      <div className="filter__container" style={{ 
+        display: 'flex', 
+        justifyContent: 'center', 
+        flexWrap: 'wrap', 
+        gap: '10px', 
+        margin: '20px auto',
+        maxWidth: '1200px',
+        padding: '0 20px'
+      }}>
+        {categories.map((category) => (
+          <button
+            key={category}
+            className={`filter__btn ${selectedCategory === category ? 'active' : ''}`}
+            onClick={() => {
+              setSelectedCategory(category);
+              setIsLoading(false);
+            }}
+            style={{
+              padding: '10px 20px',
+              fontSize: '16px',
+              fontWeight: selectedCategory === category ? '700' : '500',
+              color: selectedCategory === category ? '#fff' : '#6107C8',
+              backgroundColor: selectedCategory === category ? '#6107C8' : 'transparent',
+              border: '2px solid #6107C8',
+              borderRadius: '25px',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+            }}
+            onMouseEnter={(e) => {
+              if (selectedCategory !== category) {
+                e.target.style.backgroundColor = '#f0e6ff';
+              }
+            }}
+            onMouseLeave={(e) => {
+              if (selectedCategory !== category) {
+                e.target.style.backgroundColor = 'transparent';
+              }
+            }}
+          >
+            {category}
+          </button>
+        ))}
+      </div>
+
       {isLoading ? (
         <div className="gallery__container">
           {Object.values(images).map((image, index) => (
