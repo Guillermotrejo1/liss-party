@@ -29,13 +29,3 @@ export const imgFiles = decorData.map(item => item.id);
 
 // Export unique categories for filter buttons
 export const categories = ["ALL", ...new Set(decorData.map(item => item.category))];
-
-
-  /*
-**CENTER PIECES**
-CENTER PIECES
-LABELS
-PARTY FAVORS
-CAKE TOPPERS
-PROPS
-*/

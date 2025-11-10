@@ -9,6 +9,7 @@ import ShirtsPage from "./Pages.jsx/ShirtsPage";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import PricingPage from "./Pages.jsx/PricingPage";
 //template_eaf20gs template iId
 //service_l3n5q49 serveice Id
 //6lwnRd44-s_j_aSGk public key
@@ -31,6 +32,7 @@ function App() {
           <Route path="/Garlands" element={<GarlandsPage />} />
           <Route path="/Decorations" element={<DecorationsPage />} />
           <Route path="/Shirts" element={<ShirtsPage />} />
+          <Route path="/Pricing" element={<PricingPage />} />
         </Routes>
       </div>
     </BrowserRouter>

@@ -21,7 +21,7 @@ function PinatasPage() {
   const imgFiles = pinataImages;
 
   const images = imgFiles.reduce((acc, file) => {
-    acc[file] = require(`../assets/pinatas/${file}.jpg`);
+    acc[file.name] = require(`../assets/pinatas/${file.name}.${file.ext}`);
     return acc;
   }, {});
 
@@ -70,7 +70,7 @@ function PinatasPage() {
       ) : (
         <GalleryCards
           images={Object.values(images)}
-          imgFiles={imgFiles}
+          imgFiles={imgFiles.map(f => f.name)}
           isOpen={isOpen}
           currentIndex={currentPageIndex}
           onOpen={handleOpen}
@@ -90,7 +90,7 @@ function PinatasPage() {
           <div className="lightbox__content">
             <img
               className="modal__img"
-              src={images[imgFiles[currentPageIndex]]}
+              src={images[imgFiles[currentPageIndex].name]}
               alt=""
               loading="lazy" 
               decoding="async"
