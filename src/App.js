@@ -10,6 +10,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 import PricingPage from "./Pages.jsx/PricingPage";
+import myLogo from "./assets/jem2.png";
 //template_eaf20gs template iId
 //service_l3n5q49 serveice Id
 //6lwnRd44-s_j_aSGk public key
@@ -20,6 +21,33 @@ function App() {
       duration: 1200,
       once: true,
     });
+
+    
+    const setFavicon = (href) => {
+      const head = document.head || document.getElementsByTagName("head")[0];
+
+      ["icon", "shortcut icon"].forEach((rel) => {
+        let link = document.querySelector(`link[rel="${rel}"]`);
+        if (!link) {
+          link = document.createElement("link");
+          link.setAttribute("rel", rel);
+          head.appendChild(link);
+        }
+        link.setAttribute("type", "image/png");
+        link.setAttribute("href", href);
+      });
+
+      
+      let apple = document.querySelector('link[rel="apple-touch-icon"]');
+      if (!apple) {
+        apple = document.createElement("link");
+        apple.setAttribute("rel", "apple-touch-icon");
+        head.appendChild(apple);
+      }
+      apple.setAttribute("href", href);
+    };
+
+    setFavicon(myLogo);
   }, []);
 
   return (
