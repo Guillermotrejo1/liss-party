@@ -4,8 +4,18 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import Footer from "../Components/Footer";
+import { useDispatch, useSelector } from "react-redux";
+import { openModal } from "../redux/modalSlice";
+import Contact from "../Components/UI/Contact";
 
 const PricingPage = () => {
+  const isOpen = useSelector((state) => state.modal.isOpen);
+  const dispatch = useDispatch();
+
+  const handleOpen = () => {
+      dispatch(openModal());
+    };
+
   const priceCategories = [
     {
       category: "Piñatas",
@@ -143,7 +153,8 @@ const PricingPage = () => {
         <div className="price__list__footer">
           <p>* Prices subject to change based on materials and design complexity</p>
           <p>** Delivery and setup fees may apply for certain services</p>
-          <button className="contact__quote__btn">Request a Custom Quote</button>
+          <button className="contact__quote__btn" onClick={handleOpen}>Request a Custom Quote</button>
+          {isOpen && <Contact />}
         </div>
       </div>
       <Footer />
