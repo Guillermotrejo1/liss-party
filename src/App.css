@@ -148,6 +148,48 @@ header {
   line-height: 2em;
 }
 
+/* Word Carousel */
+.word-carousel {
+  overflow: hidden;
+  width: 100%;
+  margin: 28px 0 8px; /* add a bit more space below the paragraph without affecting the button much */
+}
+.word-carousel--hidden { opacity: 0; transform: translateY(8px); }
+.word-carousel--visible { opacity: 1; transform: translateY(0); transition: opacity 600ms ease, transform 600ms ease; }
+
+.word-carousel__track {
+  display: flex;
+  gap: 24px;
+  animation: wc-scroll var(--wc-speed, 25s) linear infinite;
+  will-change: transform;
+}
+
+.word-carousel__item {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, #6107c8, #c7b8ea, lightpink, #6107c8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  white-space: nowrap;
+  font-size: 14px;
+}
+
+@keyframes wc-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .word-carousel__track { animation: none; }
+}
+
+@media (max-width: 768px) {
+  .word-carousel__track { gap: 16px; animation-duration: 32s; }
+  .word-carousel__item { font-size: 12px; letter-spacing: 1px; }
+}
+
 .highlighted {
   font-size: 28px;
   text-shadow: 2px 2px 5px lightpink;

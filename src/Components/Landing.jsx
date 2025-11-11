@@ -8,6 +8,7 @@ import Contact from "./UI/Contact";
 import RubyDiamond from "./RubyDiamond";
 import Diamond from "./Diamond.jsx";
 import AmethystDiamond from "./AmethystDiamond.jsx";
+import WordCarousel from "./UI/WordCarousel";
 
 function Landing() {
   const isOpen = useSelector((state) => state.modal.isOpen);
@@ -99,6 +100,18 @@ function Landing() {
                     memories.
                   </span>
                 </p>
+                <WordCarousel
+                  words={[
+                    "Piñatas",
+                    "Garlands",
+                    "Banners",
+                    "Shirts",
+                    "Center Pieces",
+                    "Stickers",
+                    "Stencils",
+                  ]}
+                  label="Available custom creation categories"
+                />
                 <button
                   className="request__btn"
                   data-aos="fade-up"
