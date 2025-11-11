@@ -9,7 +9,7 @@ function Themes() {
     <section id="Themes" data-aos="fade-up" data-aos-delay="400">
       <div className="header__container">
         <div className="header__description">
-          <div className="header__title pinata__title">~ Party Packages ~</div>
+          <div className="header__title pinata__title">~ Party Creations ~</div>
         </div>
         <div className="card__container">
         <div data-aos="flip-left">

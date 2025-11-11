@@ -10,19 +10,18 @@ const PricingPage = () => {
     {
       category: "Piñatas",
       items: [
-        { name: "Small Piñata (12-18 inches)", price: "$45 - $65" },
-        { name: "Medium Piñata (20-24 inches)", price: "$75 - $95" },
-        { name: "Large Piñata (28-36 inches)", price: "$110 - $150" },
-        { name: "Custom Character Piñata", price: "Starting at $120" },
+        { name: "Mini Piñata (up to12 inches)", price: "$10 - $15" },
+        { name: "Regular Piñata (up to 20 inches)", price: "$20 - $45" },
+        { name: "Large Piñata (up to 36 inches)", price: "$50+" },
       ]
     },
     {
       category: "Center Pieces",
       items: [
-        { name: "Basic Centerpiece (set of 3)", price: "$45" },
-        { name: "Premium Centerpiece (set of 3)", price: "$75" },
-        { name: "Custom Themed Centerpiece", price: "$30 each" },
-        { name: "Balloon Centerpiece", price: "$25 - $40" },
+        { name: "Basic (set of 3)", price: "$15" },
+        { name: "Premium (set of 3)", price: "$30" },
+        { name: "Double Sided", price: "+$10" },
+        { name: "Personalized photo", price: "+$10" },
       ]
     },
     {
@@ -37,9 +36,10 @@ const PricingPage = () => {
       category: "Cake Toppers",
       items: [
         { name: "Standard Cake Topper", price: "$15 - $25" },
-        { name: "Custom Character Topper", price: "$30 - $45" },
-        { name: "3D Cake Topper", price: "$40 - $60" },
-        { name: "LED Light-up Topper", price: "$35 - $50" },
+        { name: "3D Cake Topper", price: "$30 - $45" },
+        { name: "Shaker Cake Topper", price: "$40 - $60" },
+        { name: "Cupcake Topper (12pk)", price: "$10 - $15" },
+        { name: "LED Light add-on", price: "+$10" },
       ]
     },
     {
@@ -54,19 +54,14 @@ const PricingPage = () => {
     {
       category: "Garlands & Banners",
       items: [
-        { name: "Balloon Garland", price: "$25 - $40" },
-        { name: "Custom Name Banner", price: "$30 - $45" },
+        { name: "Gift Basket Garland", price: "$25 - $40" },
+        { name: "Balloon Garland", price: "$100" },
+        { name: "Balloon Tower", price: "$50" },
+        { name: "Custom B-Day Banner", price: "$25 - $45", note: "* w/name +$10 *" },
         { name: "Photo Banner", price: "$40 - $60" },
+        { name: "High Chair Banner", price: "$15", notes: ["* w/Ribbon Garland +$10 *", "* 3D +$5 *"] },
       ]
     },
-    {
-      category: "Party Packages",
-      items: [
-        { name: "Basic Package", price: "$150 - $250" },
-        { name: "Premium Package", price: "$300 - $450" },
-        { name: "Deluxe Package", price: "$500 - $800" },
-      ]
-    }
   ];
 
   return (
@@ -100,7 +95,45 @@ const PricingPage = () => {
                 <div key={idx} className="price__item">
                   <span className="price__item__name">{item.name}</span>
                   <span className="price__item__dots"></span>
-                  <span className="price__item__price">{item.price}</span>
+                  <span
+                    className="price__item__right"
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "flex-end",
+                    }}
+                  >
+                    <span className="price__item__price">{item.price}</span>
+                    {/* Single note (backward compatible) */}
+                    {item.note && (
+                      <span
+                        className="price__item__note"
+                        style={{
+                          marginTop: "4px",
+                          fontSize: "12px",
+                          fontStyle: "italic",
+                          color: "#6107C8",
+                        }}
+                      >
+                        {item.note}
+                      </span>
+                    )}
+                    {/* Multiple notes */}
+                    {Array.isArray(item.notes) && item.notes.map((n, i) => (
+                      <span
+                        key={i}
+                        className="price__item__note"
+                        style={{
+                          marginTop: "4px",
+                          fontSize: "12px",
+                          fontStyle: "italic",
+                          color: "#6107C8",
+                        }}
+                      >
+                        {n}
+                      </span>
+                    ))}
+                  </span>
                 </div>
               ))}
             </div>

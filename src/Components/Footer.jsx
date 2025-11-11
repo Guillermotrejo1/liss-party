@@ -39,7 +39,7 @@ function Footer() {
               Piñatas
             </a>
             <a href="/Themes" className="footer__link">
-              Party Packages
+              Party Creations
             </a>
             <a href="/Garlands" className="footer__link">
               Garlands

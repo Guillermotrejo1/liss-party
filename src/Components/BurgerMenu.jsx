@@ -41,7 +41,7 @@ function BurgerMenu() {
               <Link to="/Garlands">Garlands</Link>
             </li>
             <li className="menu__list">
-              <Link to="/Themes">Party Packages</Link>
+              <Link to="/Themes">Party Creations</Link>
             </li>
             <li className="menu__list">
               <Link to="/Decorations">Decorations</Link>

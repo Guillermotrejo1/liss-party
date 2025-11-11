@@ -20,11 +20,11 @@ function Home() {
     <Contact/>
     <Landing/>
     <Showcase/>
+    <Shirts/>
     <Piñatas/>
-    <Themes/>
     <Garlands/>
     <Decorations/>
-    <Shirts/>
+    <Themes/>
     <Footer/>
     </>
 

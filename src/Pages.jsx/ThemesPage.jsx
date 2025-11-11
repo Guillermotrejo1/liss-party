@@ -49,7 +49,7 @@ function ThemesPage() {
 
   return (
     <>
-      <Banner title="Party Packages For Your Special Day!" />
+      <Banner title="Welcome to the Party Creations page!" />
       <Link to="/">
         <button className="back__btn">
           <FontAwesomeIcon icon={faArrowLeft} />
