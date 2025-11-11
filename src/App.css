@@ -164,6 +164,11 @@ header {
   will-change: transform;
 }
 
+/* Pause scroll on hover (and resume on mouse leave) */
+.word-carousel:hover .word-carousel__track {
+  animation-play-state: paused;
+}
+
 .word-carousel__item {
   font-weight: 700;
   text-transform: uppercase;
