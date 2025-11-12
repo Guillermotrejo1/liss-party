@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import Card from "./Card";
 import { Link, useLocation } from "react-router-dom";
-import pin1 from "../assets/pinatas/pin1.jpg";
-import pin2 from "../assets/pinatas/pin2.jpg";
+import pin1 from "../assets/pinatas/pin1.png";
+import pin2 from "../assets/pinatas/pin14.png";
 
 function Piñatas() {
   const location = useLocation();
