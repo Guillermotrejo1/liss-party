@@ -13,13 +13,13 @@ function WordCarousel({
     "Center Pieces",
     "Stickers",
     "Stencils",
-    "Labels",
-    "Hats",
-    "Cups",
-    "Logos",
+    "Cake Toppers",
+    "Cupcake Toppers",
+    "Invitations",
+    "Goodie Bags",
   ],
   label = "Explore more",
-  speedSeconds = 30,
+  speedSeconds = 25,
 }) {
   const sequence = [...words, ...words];
 

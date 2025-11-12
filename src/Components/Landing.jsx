@@ -109,10 +109,10 @@ function Landing() {
                     "Center Pieces",
                     "Stickers",
                     "Stencils",
-                    "Labels",
-                    "Hats",
-                    "Cups",
-                    "Logos",
+                    "Cake Toppers",
+                    "Cupcake Toppers",
+                    "Invitations",
+                    "Goodie Bags",
                   ]}
                   label="Available custom creation categories"
                 />
