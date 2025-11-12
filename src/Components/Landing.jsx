@@ -109,6 +109,10 @@ function Landing() {
                     "Center Pieces",
                     "Stickers",
                     "Stencils",
+                    "Labels",
+                    "Hats",
+                    "Cups",
+                    "Logos",
                   ]}
                   label="Available custom creation categories"
                 />
