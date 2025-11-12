@@ -24,7 +24,7 @@ function WordCarousel({
   const sequence = [...words, ...words];
 
   // Inline CSS variable for speed control
-  const style = { ["--wc-speed"]: `${speedSeconds}s` };
+  const style = { "--wc-speed": `${speedSeconds}s` };
 
   return (
     <div className="word-carousel" aria-label={label} role="list" style={style}>
