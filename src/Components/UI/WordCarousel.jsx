@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 // Simple infinite-scrolling word carousel (no edge fades)
 // - Pass an array of strings via `words`
@@ -26,8 +26,25 @@ function WordCarousel({
   // Inline CSS variable for speed control
   const style = { "--wc-speed": `${speedSeconds}s` };
 
+  // Defer visibility until page load to avoid early flicker
+  const [isVisible, setIsVisible] = useState(false);
+  useEffect(() => {
+    const show = () => requestAnimationFrame(() => setIsVisible(true));
+    if (document.readyState === "complete") {
+      show();
+    } else {
+      window.addEventListener("load", show, { once: true });
+      return () => window.removeEventListener("load", show);
+    }
+  }, []);
+
   return (
-    <div className="word-carousel" aria-label={label} role="list" style={style}>
+    <div
+      className={`word-carousel ${isVisible ? 'word-carousel--visible' : 'word-carousel--hidden'}`}
+      aria-label={label}
+      role="list"
+      style={style}
+    >
   <div className="word-carousel__wrapper">
     <div className="word-carousel__track">
       {sequence.map((w, i) => (
