@@ -87,18 +87,18 @@ function Landing() {
                   data-aos="fade-right"
                   data-aos-delay="400"
                 >
-                  Hello! My name is <span className="highlighted">Lisseth</span>
-                  , and my goal is to bring your ideas to{" "}
-                  <span className="highlighted">life</span> while taking away
-                  the{" "}
-                  <span className="highlighted">
-                    stress and labor of decorating
-                  </span>
-                  , allowing you to focus on what matters most -{" "}
-                  <span className="highlighted">
-                    enjoying your special moments and creating unforgettable
-                    memories.
-                  </span>
+                 Hello! I'm Lisseth. What started as creating handmade pieces and decor for family events
+                 has grown into a full creative business. I now bring ideas to life through stress-free decorating,
+                 custom pinatas, and personalized shirts for birthdays, businesses, and everyday wear.
+                </p>
+                <p
+                  className="intro__text--snd"
+                  data-aos="fade-right"
+                  data-aos-delay="450"
+                >
+                 I also create professional items like stickers, stencils, and business cards to help brands
+                 stand out. I'm always learning, trying new techniques, and challenging myself so I can 
+                 offer fresh, meaningful, and beautifully crafted pieces for every client.
                 </p>
                 <WordCarousel
                   words={[
