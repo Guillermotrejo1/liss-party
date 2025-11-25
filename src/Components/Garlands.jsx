@@ -1,7 +1,7 @@
 import Card from "./Card";
 import { Link } from "react-router-dom";
-import gar1 from "../assets/garlands/gar1.jpg";
-import gar7 from "../assets/garlands/gar7.jpg";
+import gar2 from "../assets/garlands/gar2.png";
+import gar4 from "../assets/garlands/gar4.png";
 
 function Garlands() {
   return (
@@ -12,13 +12,13 @@ function Garlands() {
         </div>
         <div className="card__container">
           <div data-aos="flip-left">
-            <Card image={gar1} />
+            <Card image={gar2} />
           </div>
           <Link to="/Garlands">
             <button className="link__btn">See More</button>
           </Link>
           <div data-aos="flip-left">
-            <Card image={gar7} />
+            <Card image={gar4} />
           </div>
         </div>
       </div>

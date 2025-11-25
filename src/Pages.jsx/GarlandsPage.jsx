@@ -19,7 +19,7 @@ function GarlandsPage() {
   const imgFiles = garlandImages;
 
   const images = imgFiles.reduce((acc, file) => {
-    acc[file] = require(`../assets/garlands/${file}.jpg`);
+    acc[file.name] = require(`../assets/garlands/${file.name}.${file.ext}`);
     return acc;
   }, {});
 
@@ -64,12 +64,13 @@ function GarlandsPage() {
       ) : (
         <GalleryCards
           images={Object.values(images)}
-          imgFiles={imgFiles}
+          imgFiles={imgFiles.map(f => f.name)}
           isOpen={isOpen}
           currentIndex={currentPageIndex}
           onOpen={handleOpen}
           onClose={handleClose}
           onClick={handleClick}
+          data-aos="fade-right" data-aos-delay="400"
         />
       )}
       {isOpen && (
@@ -83,7 +84,7 @@ function GarlandsPage() {
           <div className="lightbox__content">
             <img
               className="modal__img"
-              src={images[imgFiles[currentPageIndex]]}
+              src={images[imgFiles[currentPageIndex].name]}
               alt=""
               loading="lazy" 
               decoding="async"
