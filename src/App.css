@@ -1031,6 +1031,13 @@ textarea {
   animation: spinner 750ms infinite linear;
 }
 
+/* Inline highlight for intro paragraphs */
+.intro__highlight {
+  color: lightpink;
+  font-weight: 700;
+  position: relative;
+}
+
 @keyframes spinner {
   0% {
     transform: rotate(0);

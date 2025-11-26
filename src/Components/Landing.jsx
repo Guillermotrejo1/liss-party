@@ -87,8 +87,8 @@ function Landing() {
                   data-aos="fade-right"
                   data-aos-delay="400"
                 >
-                 Hello! I'm Lisseth. What started as creating handmade pieces and decor for family events
-                 has grown into a full creative business. I now bring ideas to life through stress-free decorating,
+                 Hello! I'm <span className="intro__highlight">Lisseth</span>. What started as creating <span className="intro__highlight">handmade pieces</span> and decor for family events
+                 has grown into a full creative <span className="intro__highlight">business</span>. I now bring ideas to life through <span className="intro__highlight">stress-free</span> decorating,
                  custom pinatas, and personalized shirts for birthdays, businesses, and everyday wear.
                 </p>
                 <p
@@ -96,9 +96,8 @@ function Landing() {
                   data-aos="fade-right"
                   data-aos-delay="450"
                 >
-                 I also create professional items like stickers, stencils, and business cards to help brands
-                 stand out. I'm always learning, trying new techniques, and challenging myself so I can 
-                 offer fresh, meaningful, and beautifully crafted pieces for every client.
+                 I also create <span className="intro__highlight">professional</span> items such as <span className="intro__highlight">stickers, stencil and business cards</span> to help <span className="intro__highlight">brands</span> stand out. I'm always <span className="intro__highlight">learning</span>, trying new <span className="intro__highlight">techniques</span>, and <span className="intro__highlight">challenging</span> myself so I can 
+                 offer <span className="intro__highlight">fresh</span>, <span className="intro__highlight">meaningful and beautifully</span> crafted pieces for every client.
                 </p>
                 <WordCarousel
                   words={[
