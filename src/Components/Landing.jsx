@@ -88,8 +88,7 @@ function Landing() {
                   data-aos-delay="400"
                 >
                  Hello! I'm <span className="intro__highlight">Lisseth</span>. What started as creating <span className="intro__highlight">handmade pieces</span> and decor for <span className="intro__highlight">family</span> events
-                 has grown into a full creative <span className="intro__highlight">business</span>. I now bring ideas to life through <span className="intro__highlight">stress-free</span> decorating,
-                 custom pinatas, and personalized shirts for birthdays, businesses, and everyday wear.
+                 has grown into a full creative <span className="intro__highlight">business</span>. "I now bring ideas to life through <span className="intro__highlight">stress-free</span> decorating, custom piñatas, and personalized shirts – perfect for birthdays, businesses, and everyday wear."
                 </p>
                 <p
                   className="intro__text--snd"
