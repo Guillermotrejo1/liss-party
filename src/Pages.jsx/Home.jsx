@@ -3,7 +3,7 @@ import Nav from '../Components/Nav'
 import Landing from '../Components/Landing'
 import BurgerMenu from '../Components/BurgerMenu'
 import Piñatas from '../Components/Piñatas'
-import Themes from '../Components/Themes'
+// import Themes from '../Components/Themes'
 import Garlands from '../Components/Garlands'
 import Decorations from '../Components/Decorations'
 import Footer from '../Components/Footer'
@@ -24,7 +24,7 @@ function Home() {
     <Piñatas/>
     <Garlands/>
     <Decorations/>
-    <Themes/>
+    {/* <Themes/> */}
     <Footer/>
     </>
 
