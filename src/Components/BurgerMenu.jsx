@@ -49,6 +49,9 @@ function BurgerMenu() {
             <li className="menu__list">
               <Link to="/Shirts">Shirts</Link>
             </li>
+            <li className="menu__list">
+              <Link to="/pricing">Pricing</Link>
+            </li>
           </ul>
         </div>
       </div>
