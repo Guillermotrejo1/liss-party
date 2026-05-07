@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 // import introImage from "../assets/jemintro.png"
-import introImage3 from "../assets/shirts/intro.jpg";
+import introImage3 from "../assets/shirts/hero.jpg";
 import myLogo from "../assets/jem2.png";
 import { useDispatch, useSelector } from "react-redux";
 import { openModal } from "../redux/modalSlice";
