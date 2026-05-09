@@ -1,8 +1,8 @@
 import React from 'react'
 import Card from './Card'
 import { Link } from 'react-router-dom'
-import shirt1 from "../assets/shirts/shirts6.png"
-import shirt7 from "../assets/shirts/shirts4.png"
+import shirt1 from "../assets/shirts/shirts6.webp"
+import shirt7 from "../assets/shirts/shirts4.webp"
 
 function Shirts() {
   return (
