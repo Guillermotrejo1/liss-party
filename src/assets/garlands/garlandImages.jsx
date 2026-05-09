@@ -1,13 +1,13 @@
 const imgFiles = [
-  {name: "gar1", ext: "png"},
-  {name: "gar2", ext: "png"},
-  {name: "gar3", ext: "png"},
-  {name: "gar4", ext: "png"},
-  {name: "gar5", ext: "png"},
-  {name: "gar6", ext: "png"},
-  {name: "gar7", ext: "png"},
-  {name: "gar8", ext: "png"},
-  {name: "gar9", ext: "png"},
+  {name: "gar1", ext: "webp"},
+  {name: "gar2", ext: "webp"},
+  {name: "gar3", ext: "webp"},
+  {name: "gar4", ext: "webp"},
+  {name: "gar5", ext: "webp"},
+  {name: "gar6", ext: "webp"},
+  {name: "gar7", ext: "webp"},
+  {name: "gar8", ext: "webp"},
+  {name: "gar9", ext: "webp"},
 ];
 
 export default imgFiles

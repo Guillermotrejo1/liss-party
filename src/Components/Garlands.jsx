@@ -1,7 +1,7 @@
 import Card from "./Card";
 import { Link } from "react-router-dom";
-import gar2 from "../assets/garlands/gar2.png";
-import gar4 from "../assets/garlands/gar4.png";
+import gar2 from "../assets/garlands/gar2.webp";
+import gar4 from "../assets/garlands/gar4.webp";
 
 function Garlands() {
   return (
