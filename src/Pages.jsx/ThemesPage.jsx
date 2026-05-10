@@ -19,7 +19,7 @@ function ThemesPage() {
   const imgFiles = themesImages;
 
   const images = imgFiles.reduce((acc, file) => {
-    acc[file] = require(`../assets/themes/${file}.jpg`);
+    acc[file] = require(`../assets/themes/${file}.webp`);
     return acc;
   }, {});
 

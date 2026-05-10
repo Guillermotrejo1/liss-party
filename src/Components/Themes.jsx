@@ -1,8 +1,8 @@
 import React from 'react'
 import Card from './Card'
 import { Link } from 'react-router-dom'
-import theme6 from "../assets/themes/theme6.jpg"
-import theme2 from "../assets/themes/theme2.jpg"
+import theme6 from "../assets/themes/theme6.webp"
+import theme2 from "../assets/themes/theme2.webp"
 
 function Themes() {
   return (
