@@ -1,8 +1,8 @@
 import React from 'react'
 import Card from './Card'
 import { Link } from 'react-router-dom'
-import decor1 from "../assets/decor/decor11.png"
-import decor2 from "../assets/decor/decor10.png"
+import decor1 from "../assets/decor/decor11.webp"
+import decor2 from "../assets/decor/decor10.webp"
 
 function Decorations() {
   return (

@@ -26,7 +26,7 @@ function DecorationsPage() {
   const imgFiles = filteredData.map(item => item.id);
 
   const images = imgFiles.reduce((acc, file) => {
-    acc[file] = require(`../assets/decor/${file}.png`);
+    acc[file] = require(`../assets/decor/${file}.webp`);
     return acc;
   }, {});
 
