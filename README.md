@@ -2,6 +2,22 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Web3Forms Email Setup
+
+This project uses Web3Forms for the contact form submission flow.
+
+1. Create a free Web3Forms account and get your access key at https://web3forms.com.
+2. Create a `.env` file in the project root (you can copy `.env.example`).
+3. Add your key:
+
+```bash
+REACT_APP_WEB3FORMS_ACCESS_KEY=your_real_access_key
+```
+
+4. Restart the dev server after editing `.env`.
+
+The contact form in `src/Components/UI/Contact.jsx` submits to `https://api.web3forms.com/submit`.
+
 ## Available Scripts
 
 In the project directory, you can run:

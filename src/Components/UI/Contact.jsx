@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { closeModal } from "../../redux/modalSlice";
-import emailjs from "@emailjs/browser";
 
 function Contact() {
   const isOpen = useSelector((state) => state.modal.isOpen);
@@ -28,34 +27,52 @@ function Contact() {
     dispatch(closeModal());
   };
 
-  function contacted(event) {
+  async function contacted(event) {
     event.preventDefault();
     setOverlayState("loading");
-    const templateParams = {
-      user_name: userData.Name,
-      user_email: userData.Email,
-      tel: userData.tel,
-      message: userData.Requests,
-    };
-    emailjs
-      .send(
-        "service_l3n5q49",
-        "template_eaf20gs",
-        templateParams,
-        "6lwnRd44-s_j_aSGk"
-      )
-      .then(() => {
-        console.log("it worked"); //remove this later its just for debugging
-        setOverlayState("success"); 
+    const accessKey = process.env.REACT_APP_WEB3FORMS_ACCESS_KEY;
+
+    if (!accessKey) {
+      alert("Web3Forms access key is missing. Add REACT_APP_WEB3FORMS_ACCESS_KEY to your .env file.");
+      setOverlayState("");
+      return;
+    }
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: accessKey,
+          name: userData.Name,
+          email: userData.Email,
+          phone: userData.tel,
+          message: userData.Requests,
+          subject: "New Party Inquiry",
+          from_name: "Liss Party Website",
+          botcheck: "",
+        }),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setOverlayState("success");
         setTimeout(() => {
-          setOverlayState(""); 
+          setOverlayState("");
         }, 3000);
         setUserData({ Name: "", Email: "", tel: "", Requests: "" });
-      })
-      .catch(() => {
-        alert("this email service is temporarily unavailable.");
-        setOverlayState(""); 
-      });
+      } else {
+        throw new Error(result.message || "Web3Forms request failed");
+      }
+    } catch (error) {
+      alert("This email service is temporarily unavailable.");
+      setOverlayState("");
+      console.error("Web3Forms error:", error);
+    }
   }
 
   if (!isOpen) return null;
