@@ -1,29 +1,10 @@
 import React, { useEffect, useState } from "react";
 
-// Simple infinite-scrolling word carousel (no edge fades)
-// - Pass an array of strings via `words`
-// - Duplicates content to create a seamless loop
-// - Respects prefers-reduced-motion
-function WordCarousel({
-  words = [
-    "Piñatas",
-    "Garlands",
-    "Banners",
-    "Shirts",
-    "Center Pieces",
-    "Stickers",
-    "Stencils",
-    "Cake Toppers",
-    "Cupcake Toppers",
-    "Invitations",
-    "Goodie Bags",
-  ],
-  label = "Explore more",
-  speedSeconds = 25,
-}) {
+// Infinite-scrolling word carousel.
+// Screen readers get the list once, as plain text; the moving copies
+// are decoration and hidden from assistive tech.
+function WordCarousel({ words = [], label = "Explore more", speedSeconds = 25 }) {
   const sequence = [...words, ...words];
-
-  // Inline CSS variable for speed control
   const style = { "--wc-speed": `${speedSeconds}s` };
 
   // Defer visibility until page load to avoid early flicker
@@ -40,28 +21,24 @@ function WordCarousel({
 
   return (
     <div
-      className={`word-carousel ${isVisible ? 'word-carousel--visible' : 'word-carousel--hidden'}`}
-      aria-label={label}
-      role="list"
+      className={`word-carousel ${isVisible ? "word-carousel--visible" : "word-carousel--hidden"}`}
       style={style}
     >
-  <div className="word-carousel__wrapper">
-    <div className="word-carousel__track">
-      {sequence.map((w, i) => (
-        <span className="word-carousel__item" role="listitem" key={`${w}-${i}`} >
-          {w}
-        </span>
-      ))}
+      <p className="sr-only">
+        {label}: {words.join(", ")}.
+      </p>
+      <div className="word-carousel__wrapper" aria-hidden="true">
+        {[0, 1].map((track) => (
+          <div className="word-carousel__track" key={track}>
+            {sequence.map((w, i) => (
+              <span className="word-carousel__item" key={`${w}-${i}`}>
+                {w}
+              </span>
+            ))}
+          </div>
+        ))}
+      </div>
     </div>
-    <div className="word-carousel__track">
-      {sequence.map((w, i) => (
-        <span className="word-carousel__item" role="listitem" key={`${w}-${i}`} >
-          {w}
-        </span>
-      ))}
-    </div>
-  </div>
-</div>
   );
 }
 

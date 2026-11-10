@@ -1,106 +1,18 @@
-import React, { useEffect, useState } from "react";
-import Banner from "../Components/Banner";
-import GalleryCards from "../Components/GalleryCards";
-import Footer from "../Components/Footer";
-import Skeleton from "../Components/UI/Skeleton";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faArrowLeft,
-  faArrowRight,
-  faCircleXmark,
-} from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
+import PageHero from "../Components/PageHero";
+import Gallery from "../Components/Gallery";
 import themesImages from "../assets/themes/themesImages.jsx";
 
+const images = themesImages.map((name, index) => ({
+  id: name,
+  src: require(`../assets/themes/${name}.webp`),
+  alt: `Themed party setup ${index + 1}`,
+}));
+
 function ThemesPage() {
-  const [isLoading, setIsLoading] = useState(true);
-  const [currentPageIndex, setCurrentPageIndex] = useState(0);
-  const [isOpen, setIsOpen] = useState(false);
-  const imgFiles = themesImages;
-
-  const images = imgFiles.reduce((acc, file) => {
-    acc[file] = require(`../assets/themes/${file}.webp`);
-    return acc;
-  }, {});
-
-  const handleOpen = (index) => {
-    setIsOpen(true);
-    setCurrentPageIndex(index);
-  };
-
-  const handleClose = () => {
-    setIsOpen(false);
-  };
-
-  const handleClick = (direction) => {
-    if (direction === "left") {
-      setCurrentPageIndex(
-        (prevIndex) => (prevIndex - 1 + imgFiles.length) % imgFiles.length
-      );
-    } else if (direction === "right") {
-      setCurrentPageIndex((prevIndex) => (prevIndex + 1) % imgFiles.length);
-    }
-  };
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    setIsLoading(false);
-  }, []);
-
   return (
     <>
-      <Banner title="Welcome to the Party Creations page!" />
-      <Link to="/">
-        <button className="back__btn">
-          <FontAwesomeIcon icon={faArrowLeft} />
-        </button>
-      </Link>
-      {isLoading ? (
-        <div className="gallery__container">
-          {Object.values(images).map((image, index) => (
-            <Skeleton key={index} width={300} height={250} borderRadius={50} />
-          ))}
-        </div>
-      ) : (
-        <GalleryCards
-          images={Object.values(images)}
-          imgFiles={imgFiles}
-          isOpen={isOpen}
-          currentIndex={currentPageIndex}
-          onOpen={handleOpen}
-          onClose={handleClose}
-          onClick={handleClick}
-        />
-      )}
-      {isOpen && (
-        <div className="lightbox">
-          <button
-            className="lightbox__arrow--left"
-            onClick={() => handleClick("left")}
-          >
-            <FontAwesomeIcon icon={faArrowLeft} />
-          </button>
-          <div className="lightbox__content">
-            <img
-              className="modal__img"
-              src={images[imgFiles[currentPageIndex]]}
-              alt=""
-              loading="lazy" 
-              decoding="async"
-            />
-            <button className="lightbox__close--icon" onClick={handleClose}>
-              <FontAwesomeIcon icon={faCircleXmark} />
-            </button>
-          </div>
-          <button
-            className="lightbox__arrow--right"
-            onClick={() => handleClick("right")}
-          >
-            <FontAwesomeIcon icon={faArrowRight} />
-          </button>
-        </div>
-      )}
-      <Footer />
+      <PageHero title="Party Creations" intro="Full themed party setups, decorated from start to finish." />
+      <Gallery images={images} label="Party creation photos" />
     </>
   );
 }

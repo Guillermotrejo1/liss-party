@@ -7,7 +7,7 @@ const Showcase = () => {
   useEffect(() => {
     // Respect reduced motion & save-data
     try {
-      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
         return;
       }
       if (navigator && navigator.connection && navigator.connection.saveData) {
@@ -26,42 +26,48 @@ const Showcase = () => {
       }
     };
 
-    // Observe the container element (avoids false negatives when video has small bounding box)
-    const container = vid.closest('.showcase__container') || vid.parentElement || document.querySelector('.showcase__container');
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          handlePlay();
-        } else {
-          try { vid.pause(); } catch (e) {}
-        }
-      });
-    }, { threshold: 0.1, rootMargin: '100px' });
+    const container = vid.closest(".showcase") || vid.parentElement;
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            handlePlay();
+          } else {
+            try {
+              vid.pause();
+            } catch (e) {}
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: "100px" }
+    );
 
     if (container) io.observe(container);
 
     return () => {
       io.disconnect();
-      try { vid.pause(); } catch (e) {}
+      try {
+        vid.pause();
+      } catch (e) {}
     };
   }, []);
 
   return (
-    <div className="showcase__container">
+    <section className="showcase" aria-label="Video of recent creations">
+      {/* Silent, looping background video: decorative, so hidden from screen readers */}
       <video
         ref={videoRef}
         className="showcase__video"
         preload="metadata"
-        poster="/poster.jpg"
         muted
         loop
         playsInline
         autoPlay
+        aria-hidden="true"
       >
         <source src={ShowcaseVideo} type="video/mp4" />
-        Your browser does not support the video tag.
       </video>
-    </div>
+    </section>
   );
 };
 

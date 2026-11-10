@@ -1,19 +1,17 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
+import Layout from "./Components/Layout";
 import Home from "./Pages.jsx/Home";
 import PinatasPage from "./Pages.jsx/PinatasPage";
 import ThemesPage from "./Pages.jsx/ThemesPage";
 import GarlandsPage from "./Pages.jsx/GarlandsPage";
 import DecorationsPage from "./Pages.jsx/DecorationsPage";
 import ShirtsPage from "./Pages.jsx/ShirtsPage";
+import PricingPage from "./Pages.jsx/PricingPage";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
-import PricingPage from "./Pages.jsx/PricingPage";
 import myLogo from "./assets/jem2.png";
-//template_eaf20gs template iId
-//service_l3n5q49 serveice Id
-//6lwnRd44-s_j_aSGk public key
 
 function App() {
   useEffect(() => {
@@ -22,7 +20,6 @@ function App() {
       once: true,
     });
 
-    
     const setFavicon = (href) => {
       const head = document.head || document.getElementsByTagName("head")[0];
 
@@ -37,7 +34,6 @@ function App() {
         link.setAttribute("href", href);
       });
 
-      
       let apple = document.querySelector('link[rel="apple-touch-icon"]');
       if (!apple) {
         apple = document.createElement("link");
@@ -52,8 +48,9 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className="App">
-        <Routes>
+      <Routes>
+        {/* Layout wraps every page with the header, footer and contact modal */}
+        <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
           <Route path="/Pinatas" element={<PinatasPage />} />
           <Route path="/Themes" element={<ThemesPage />} />
@@ -61,8 +58,8 @@ function App() {
           <Route path="/Decorations" element={<DecorationsPage />} />
           <Route path="/Shirts" element={<ShirtsPage />} />
           <Route path="/Pricing" element={<PricingPage />} />
-        </Routes>
-      </div>
+        </Route>
+      </Routes>
     </BrowserRouter>
   );
 }

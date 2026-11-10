@@ -66,6 +66,24 @@ function Contact() {
     };
   }, []);
 
+  // While open: Escape closes, focus moves into the form, page scroll is locked
+  const firstFieldRef = useRef(null);
+  useEffect(() => {
+    if (!isOpen) return;
+    const previouslyFocused = document.activeElement;
+    firstFieldRef.current?.focus();
+    const onKey = (e) => {
+      if (e.key === "Escape") dispatch(closeModal());
+    };
+    document.addEventListener("keydown", onKey);
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = "";
+      if (previouslyFocused && previouslyFocused.focus) previouslyFocused.focus();
+    };
+  }, [isOpen, dispatch]);
+
   async function contacted(event) {
     event.preventDefault();
     const normalizedData = {
@@ -139,71 +157,115 @@ function Contact() {
   if (!isOpen) return null;
 
   return (
-    <div className="contact__container">
-      {isOpen && (
-        <>
-          <div className="contact__box">
-            <form onSubmit={contacted}>
-              <input
-                type="text"
-                name="Name"
-                value={userData.Name}
-                placeholder="Enter Your Full Name"
-                autoComplete="off"
-                onChange={data}
-                required
-              />
-              <input
-                type="email"
-                name="Email"
-                value={userData.Email}
-                placeholder="Enter Your E-mail"
-                autoComplete="off"
-                onChange={data}
-                aria-invalid={showEmailHint}
-                required
-              />
-              {showEmailHint && (
-                <p className="contact__field-hint">Please enter a valid email format (example@gmail.com).</p>
-              )}
-              <input
-                type="tel"
-                name="tel"
-                value={userData.tel}
-                placeholder="Enter Your Phone #"
-                autoComplete="off"
-                onChange={data}
-                required
-              />
-              <textarea
-                value={userData.Requests}
-                name="Requests"
-                placeholder="Enter Your Request Here"
-                autoComplete="off"
-                onChange={data}
-                required
-              ></textarea>
-              {validationMessage && <p className="contact__validation">{validationMessage}</p>}
-              <button className="submit__btn" disabled={!isFormValid}>
-                Submit
-              </button>
-            </form>
-            <button className="contact__close--btn" onClick={handleCloseModal}>
-              <FontAwesomeIcon icon={faTimes} />
-            </button>
-            {overlayState === "loading" && (
-              <div className="contact__overlay contact__overlay--loading contact__overlay--visible">
-                <FontAwesomeIcon icon={faSpinner} className="spinner__icon" />
-              </div>
-            )}
-            {overlayState === "success" && (
-              <div className="contact__overlay contact__overlay--success contact__overlay--complete">
-                Thanks for the message! I will reach out to you soon.
-              </div>
-            )}
-          </div>
-        </>
-      )}
+    <div
+      className="contact__container"
+      onClick={(e) => {
+        if (e.target === e.currentTarget) handleCloseModal();
+      }}
+    >
+      <div
+        className="contact__box"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="contact-title"
+        aria-describedby="contact-desc"
+      >
+        <h2 id="contact-title" className="contact__title">
+          Let's create something
+        </h2>
+        <p id="contact-desc" className="contact__desc">
+          Tell me about your event or idea and I'll get back to you soon.
+        </p>
+
+        <form onSubmit={contacted} noValidate>
+          <label className="contact__field">
+            <span className="contact__label">Full name</span>
+            <input
+              ref={firstFieldRef}
+              type="text"
+              name="Name"
+              value={userData.Name}
+              autoComplete="name"
+              onChange={data}
+              required
+            />
+          </label>
+
+          <label className="contact__field">
+            <span className="contact__label">Email</span>
+            <input
+              type="email"
+              name="Email"
+              value={userData.Email}
+              autoComplete="email"
+              onChange={data}
+              aria-invalid={showEmailHint}
+              aria-describedby={showEmailHint ? "contact-email-hint" : undefined}
+              required
+            />
+          </label>
+          {showEmailHint && (
+            <p id="contact-email-hint" className="contact__field-hint">
+              Please enter a valid email format (example@gmail.com).
+            </p>
+          )}
+
+          <label className="contact__field">
+            <span className="contact__label">Phone number</span>
+            <input
+              type="tel"
+              name="tel"
+              value={userData.tel}
+              autoComplete="tel"
+              onChange={data}
+              required
+            />
+          </label>
+
+          <label className="contact__field">
+            <span className="contact__label">Your request</span>
+            <textarea
+              value={userData.Requests}
+              name="Requests"
+              onChange={data}
+              required
+            ></textarea>
+          </label>
+
+          {validationMessage && (
+            <p className="contact__validation" role="alert">
+              {validationMessage}
+            </p>
+          )}
+          <button type="submit" className="submit__btn" disabled={!isFormValid}>
+            Submit
+          </button>
+        </form>
+
+        <button
+          type="button"
+          className="contact__close--btn"
+          onClick={handleCloseModal}
+          aria-label="Close contact form"
+        >
+          <FontAwesomeIcon icon={faTimes} />
+        </button>
+
+        {/* Announced to screen readers when the status changes */}
+        <div aria-live="polite">
+          {overlayState === "loading" && (
+            <div className="contact__overlay contact__overlay--loading contact__overlay--visible">
+              <FontAwesomeIcon icon={faSpinner} className="spinner__icon" />
+              <span className="sr-only">Sending your message…</span>
+            </div>
+          )}
+          {overlayState === "success" && (
+            <div className="contact__overlay contact__overlay--success contact__overlay--complete">
+              Thanks for the message! I will reach out to you soon.
+            </div>
+          )}
+        </div>
+      </div>
     </div>
   );
 }
