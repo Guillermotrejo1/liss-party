@@ -1,10 +1,34 @@
+import { lazy, Suspense, useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import introImage from "../assets/shirts/hero.webp";
 import { openModal } from "../redux/modalSlice";
-import RubyDiamond from "./RubyDiamond";
-import Diamond from "./Diamond.jsx";
-import AmethystDiamond from "./AmethystDiamond.jsx";
 import WordCarousel from "./UI/WordCarousel";
+
+// three.js is big (~130KB gzipped), so it loads in its own file after the page
+// shows up, instead of making everyone download it before seeing anything.
+const GemTrio = lazy(() => import("./GemTrio"));
+
+// Wait until the page has finished loading and the browser is idle before
+// starting the gems, so the text and photos show up first.
+function useWhenIdle() {
+  const [ready, setReady] = useState(false);
+  useEffect(() => {
+    let idleId;
+    const whenIdle = () => {
+      idleId = window.requestIdleCallback
+        ? window.requestIdleCallback(() => setReady(true), { timeout: 2000 })
+        : window.setTimeout(() => setReady(true), 200);
+    };
+    if (document.readyState === "complete") whenIdle();
+    else window.addEventListener("load", whenIdle, { once: true });
+    return () => {
+      window.removeEventListener("load", whenIdle);
+      if (window.cancelIdleCallback) window.cancelIdleCallback(idleId);
+      window.clearTimeout(idleId);
+    };
+  }, []);
+  return ready;
+}
 
 const creations = [
   "Piñatas",
@@ -24,6 +48,7 @@ const creations = [
 // The layout lives in CSS grid areas (.hero in App.css).
 function Landing() {
   const dispatch = useDispatch();
+  const showGems = useWhenIdle();
 
   return (
     <section className="hero" aria-labelledby="hero-title">
@@ -40,9 +65,14 @@ function Landing() {
         data-aos="fade-in"
         data-aos-delay="200"
       >
-        <RubyDiamond />
-        <Diamond />
-        <AmethystDiamond />
+        {/* The placeholder takes the same space, so nothing jumps when the gems appear */}
+        {showGems ? (
+          <Suspense fallback={<div className="gem-trio" />}>
+            <GemTrio />
+          </Suspense>
+        ) : (
+          <div className="gem-trio" />
+        )}
       </div>
 
       <div className="hero__intro">

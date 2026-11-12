@@ -276,19 +276,15 @@ main:focus {
 
 .hero__gems {
   grid-area: gems;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  justify-items: center;
-  align-items: center;
-  gap: 8px;
+  container-type: inline-size; /* lets .gem-trio size itself from this box's width */
 }
 
-/* The three.js canvases draw at 280x220; let them scale down to fit their column */
-.hero__gems canvas {
-  width: 100% !important;
-  max-width: 280px;
-  height: auto !important;
-  aspect-ratio: 280 / 220;
+/* One canvas for all three gems. Each gem gets a third of the width, up to
+   280x220, so the height is a third of the width (minus the gaps) x 220/280. */
+.gem-trio {
+  display: block;
+  width: 100%;
+  height: min(220px, (100cqi - 16px) / 3 * 220 / 280);
 }
 
 .hero__intro {
