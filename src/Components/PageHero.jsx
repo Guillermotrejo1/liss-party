@@ -6,7 +6,7 @@ function PageHero({ title, intro }) {
         {title}
       </h1>
       {intro && <p className="page-hero__intro">{intro}</p>}
-      <img className="page-hero__wave" src="/wave2.svg" alt="" aria-hidden="true" />
+      {/* <img className="page-hero__wave" src="/wave2.svg" alt="" aria-hidden="true" /> */}
     </section>
   );
 }
