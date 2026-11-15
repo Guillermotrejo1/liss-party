@@ -1,4 +1,4 @@
-// Top banner for inner pages (replaces Banner.jsx).
+
 function PageHero({ title, intro }) {
   return (
     <section className="page-hero" aria-labelledby="page-title">

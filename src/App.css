@@ -502,10 +502,10 @@ main:focus {
 .page-hero__wave {
   position: absolute;
   left: 0;
-  bottom: -1px;
+  top: calc(100% - 1px); /* hang just below the banner; -1px avoids a hairline gap */
   width: 100%;
-  height: 20px;
-  object-fit: cover;
+  height: 28px;           /* try 24–60px to make the points shallower or deeper */
+  pointer-events: none;   /* clicks pass through to whatever is under it */
 }
 
 /* ---------- Gallery pages ---------- */
