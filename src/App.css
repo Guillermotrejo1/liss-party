@@ -276,15 +276,48 @@ main:focus {
 
 .hero__gems {
   grid-area: gems;
-  container-type: inline-size; /* lets .gem-trio size itself from this box's width */
 }
 
-/* One canvas for all three gems. Each gem gets a third of the width, up to
-   280x220, so the height is a third of the width (minus the gaps) x 220/280. */
-.gem-trio {
+/* Gems: still images in a 3-column grid set the size; the live 3D canvas is laid
+   exactly on top of them. Each gem gets a third of the width, up to 280x220, so the
+   stills and the canvas line up. */
+.hero-gems {
+  position: relative;
+}
+
+.hero-gems__stills {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  justify-items: center;
+  transition: opacity 0.6s ease;
+}
+
+.hero-gems__stills img {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  aspect-ratio: 280 / 220;
+}
+
+/* Absolutely positioned so the canvas can never change the row's height */
+.hero-gems__canvas {
+  position: absolute;
+  inset: 0;
   display: block;
   width: 100%;
-  height: min(220px, (100cqi - 16px) / 3 * 220 / 280);
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+/* Live gems are ready: fade them in and the stills out */
+.hero-gems--live .hero-gems__canvas {
+  opacity: 1;
+}
+.hero-gems--live .hero-gems__stills {
+  opacity: 0;
 }
 
 .hero__intro {
