@@ -77,7 +77,7 @@ function HeroGems() {
       <ul className="hero-gems__stills">
         {stills.map((gem) => (
           <li key={gem.name}>
-            <img src={gem.src} alt="" width="280" height="220" decoding="async" />
+            <img src={gem.src} alt="" width="280" height="220" decoding="async" fetchpriority="high"/>
           </li>
         ))}
       </ul>
