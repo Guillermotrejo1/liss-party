@@ -25,27 +25,20 @@ function Landing() {
 
   return (
     <section className="hero" aria-labelledby="hero-title">
-      <div className="hero__brand" data-aos="fade-up" data-aos-delay="200">
+      <div className="hero__brand hero__enter">
         <h1 id="hero-title" className="hero__title">
           J.E.M. Creations
         </h1>
         <p className="hero__tagline">You think it, I create it</p>
       </div>
 
-      <div
-        className="hero__gems"
-        aria-hidden="true"
-        data-aos="fade-in"
-        data-aos-delay="200"
-      >
+      <div className="hero__gems" aria-hidden="true">
         <HeroGems />
       </div>
 
       <div className="hero__intro">
-        <h2 className="hero__heading" data-aos="fade-right" data-aos-delay="300">
-          Welcome to JEM Creations!
-        </h2>
-        <p className="hero__text" data-aos="fade-right" data-aos-delay="400">
+        <h2 className="hero__heading hero__enter">Welcome to JEM Creations!</h2>
+        <p className="hero__text hero__enter">
           Hello! I'm <strong>Lisseth</strong>. What started as creating{" "}
           <strong>handmade pieces</strong> and decor for <strong>family</strong>{" "}
           events has grown into a full creative <strong>business</strong>. I now
@@ -53,14 +46,14 @@ function Landing() {
           custom piñatas, and personalized shirts &mdash; perfect for birthdays,
           businesses, and everyday wear.
         </p>
-        <p className="hero__text" data-aos="fade-right" data-aos-delay="450">
+        <p className="hero__text hero__enter">
           I also create <strong>professional</strong> items such as{" "}
           <strong>stickers, stencils and business cards</strong> to help{" "}
-          <strong>brands</strong> stand out. I'm always <strong>learning</strong>,
-          trying new <strong>techniques</strong>, and <strong>challenging</strong>{" "}
-          myself so I can offer <strong>fresh</strong>,{" "}
-          <strong>meaningful and beautifully</strong> crafted pieces for every
-          client.
+          <strong>brands</strong> stand out. I'm always{" "}
+          <strong>learning</strong>, trying new <strong>techniques</strong>, and{" "}
+          <strong>challenging</strong> myself so I can offer{" "}
+          <strong>fresh</strong>, <strong>meaningful and beautifully</strong>{" "}
+          crafted pieces for every client.
         </p>
         <WordCarousel words={creations} label="Custom creations I make" />
         <button
@@ -73,10 +66,12 @@ function Landing() {
         </button>
       </div>
 
-      <figure className="hero__media" data-aos="fade-left" data-aos-delay="400">
+      <figure className="hero__media hero__enter">
         <img
           src={introImage}
           alt="Custom Halloween shirt design made by J.E.M. Creations"
+          width="570"
+          height="600"
           decoding="async"
         />
       </figure>

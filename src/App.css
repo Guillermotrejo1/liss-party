@@ -103,7 +103,17 @@ main:focus {
   inset: -2px;
   z-index: -1;
   border-radius: 12px;
-  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #ff00c8, #ff0000);
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #ff00c8,
+    #ff0000
+  );
   background-size: 600%;
   filter: blur(8px);
   opacity: 0;
@@ -121,9 +131,15 @@ main:focus {
 }
 
 @keyframes glowing {
-  0% { background-position: 0 0; }
-  50% { background-position: 400% 0; }
-  100% { background-position: 0 0; }
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
 }
 
 /* ---------- Header ---------- */
@@ -352,10 +368,51 @@ main:focus {
 
 .hero__media img {
   width: 100%;
+  height: auto;
   max-height: 460px;
   object-fit: cover;
   border-radius: var(--radius);
   box-shadow: var(--glow);
+}
+
+/* Hero entrance: plain CSS, so it starts on the first paint (no waiting for JavaScript).
+   Title rises up, heading + text come from the left, photo comes from the right. */
+@keyframes hero-up {
+  from { opacity: 0; transform: translateY(20px); }
+}
+@keyframes hero-from-left {
+  from { opacity: 0; transform: translateX(-40px); }
+}
+@keyframes hero-from-right {
+  from { opacity: 0; transform: translateX(40px); }
+}
+
+.hero__enter {
+  animation: hero-up 0.8s ease-out both;
+}
+.hero__heading.hero__enter,
+.hero__text.hero__enter {
+  animation-name: hero-from-left;
+}
+.hero__media.hero__enter {
+  animation-name: hero-from-right;
+}
+
+/* small stagger, kept short so nothing waits long */
+.hero__heading.hero__enter { animation-delay: 0.05s; }
+.hero__text.hero__enter { animation-delay: 0.1s; }
+.hero__text.hero__enter + .hero__text.hero__enter { animation-delay: 0.15s; }
+.hero__media.hero__enter { animation-delay: 0.1s; }
+
+/* keep the slide-in from causing a sideways scrollbar on phones */
+.hero {
+  overflow-x: clip;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__enter {
+    animation: none;
+  }
 }
 
 /* Word carousel */
@@ -373,7 +430,9 @@ main:focus {
 .word-carousel--visible {
   opacity: 1;
   transform: translateY(0);
-  transition: opacity 500ms ease, transform 500ms ease;
+  transition:
+    opacity 500ms ease,
+    transform 500ms ease;
 }
 
 .word-carousel__wrapper {
@@ -407,8 +466,12 @@ main:focus {
 }
 
 @keyframes wc-scroll {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -475,7 +538,7 @@ main:focus {
 
 .category__title::before,
 .category__title::after {
-  content: "~" / "";
+  content: "~"/ "";
   margin: 0 0.35em;
   color: #e25c8a;
 }
@@ -490,8 +553,12 @@ main:focus {
   box-shadow: var(--glow);
 }
 
-.category__img--first { grid-area: first; }
-.category__img--second { grid-area: second; }
+.category__img--first {
+  grid-area: first;
+}
+.category__img--second {
+  grid-area: second;
+}
 
 .category__img img {
   width: 100%;
@@ -531,10 +598,12 @@ main:focus {
 .page-hero__wave {
   position: absolute;
   left: 0;
-  top: calc(100% - 1px); /* hang just below the banner; -1px avoids a hairline gap */
+  top: calc(
+    100% - 1px
+  ); /* hang just below the banner; -1px avoids a hairline gap */
   width: 100%;
-  height: 28px;           /* try 24–60px to make the points shallower or deeper */
-  pointer-events: none;   /* clicks pass through to whatever is under it */
+  height: 28px; /* try 24–60px to make the points shallower or deeper */
+  pointer-events: none; /* clicks pass through to whatever is under it */
 }
 
 /* ---------- Gallery pages ---------- */
@@ -557,7 +626,9 @@ main:focus {
   background: transparent;
   color: var(--purple);
   font-weight: 500;
-  transition: background-color 200ms ease, color 200ms ease;
+  transition:
+    background-color 200ms ease,
+    color 200ms ease;
 }
 
 .filters__btn:hover {
@@ -597,7 +668,9 @@ main:focus {
   background: var(--white);
   box-shadow: 0 6px 18px rgba(52, 6, 95, 0.12);
   cursor: zoom-in;
-  transition: transform 250ms ease, box-shadow 250ms ease;
+  transition:
+    transform 250ms ease,
+    box-shadow 250ms ease;
 }
 
 .gallery__button:hover {
@@ -666,7 +739,9 @@ main:focus {
   background: transparent;
   color: var(--amethyst);
   font-size: 2.4rem;
-  transition: transform 200ms ease, color 200ms ease;
+  transition:
+    transform 200ms ease,
+    color 200ms ease;
 }
 
 .lightbox__btn:hover {
@@ -797,7 +872,11 @@ main:focus {
 .price-row__dots {
   grid-area: dots;
   height: 1px;
-  background: repeating-linear-gradient(to right, #c7b8ea 0 5px, transparent 5px 10px);
+  background: repeating-linear-gradient(
+    to right,
+    #c7b8ea 0 5px,
+    transparent 5px 10px
+  );
 }
 
 .price-row__price {
@@ -859,7 +938,9 @@ main:focus {
   letter-spacing: 1px;
   text-transform: uppercase;
   box-shadow: 0 5px 20px rgba(97, 7, 200, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .pricing__cta:hover {
@@ -955,9 +1036,15 @@ main:focus {
 }
 
 @keyframes bounce {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
-  100% { transform: translateY(0); }
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -976,8 +1063,16 @@ main:focus {
   place-items: center;
   padding: 20px;
   background:
-    radial-gradient(circle at 20% 20%, rgba(199, 184, 234, 0.35), transparent 40%),
-    radial-gradient(circle at 80% 80%, rgba(255, 182, 193, 0.35), transparent 45%),
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(199, 184, 234, 0.35),
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 80% 80%,
+      rgba(255, 182, 193, 0.35),
+      transparent 45%
+    ),
     rgba(14, 10, 24, 0.65);
   animation: contact-backdrop-fade 140ms ease-out;
   overflow-y: auto;
@@ -990,8 +1085,14 @@ main:focus {
   padding: 36px 32px 30px;
   border: 1px solid rgba(255, 182, 193, 0.65);
   border-radius: 22px;
-  background: linear-gradient(160deg, rgba(255, 255, 255, 0.97), rgba(245, 239, 255, 0.95));
-  box-shadow: 0 24px 48px rgba(43, 23, 69, 0.3), 0 0 0 1px rgba(199, 184, 234, 0.4);
+  background: linear-gradient(
+    160deg,
+    rgba(255, 255, 255, 0.97),
+    rgba(245, 239, 255, 0.95)
+  );
+  box-shadow:
+    0 24px 48px rgba(43, 23, 69, 0.3),
+    0 0 0 1px rgba(199, 184, 234, 0.4);
   overflow: hidden;
   animation: contact-modal-reveal 180ms cubic-bezier(0.2, 0.75, 0.2, 1);
 }
@@ -1034,7 +1135,9 @@ main:focus {
   font-size: 15px;
   color: var(--ink);
   background: rgba(255, 255, 255, 0.94);
-  transition: border-color 220ms ease, box-shadow 220ms ease;
+  transition:
+    border-color 220ms ease,
+    box-shadow 220ms ease;
 }
 
 .contact__box input:hover,
@@ -1066,7 +1169,9 @@ main:focus {
   font-size: 16px;
   letter-spacing: 0.4px;
   box-shadow: 0 14px 24px rgba(97, 7, 200, 0.28);
-  transition: transform 200ms ease, box-shadow 200ms ease;
+  transition:
+    transform 200ms ease,
+    box-shadow 200ms ease;
 }
 
 .submit__btn:disabled {
@@ -1110,7 +1215,9 @@ main:focus {
   background-color: rgba(255, 182, 193, 0.25);
   color: var(--purple);
   font-size: 22px;
-  transition: transform 200ms ease, background-color 200ms ease;
+  transition:
+    transform 200ms ease,
+    background-color 200ms ease;
 }
 
 .contact__close--btn:hover {
@@ -1134,7 +1241,11 @@ main:focus {
 
 .contact__overlay--success {
   padding: 20px;
-  background: linear-gradient(140deg, rgba(238, 255, 251, 0.97), rgba(195, 255, 245, 0.98));
+  background: linear-gradient(
+    140deg,
+    rgba(238, 255, 251, 0.97),
+    rgba(195, 255, 245, 0.98)
+  );
   color: #04544b;
   font-size: clamp(1.4rem, 4vw, 1.9rem);
   font-weight: 700;
@@ -1149,17 +1260,27 @@ main:focus {
 }
 
 @keyframes spinner {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes contact-modal-reveal {
-  from { transform: translateY(10px) scale(0.985); }
-  to { transform: translateY(0) scale(1); }
+  from {
+    transform: translateY(10px) scale(0.985);
+  }
+  to {
+    transform: translateY(0) scale(1);
+  }
 }
 
 @keyframes contact-backdrop-fade {
-  from { opacity: 0.6; }
-  to { opacity: 1; }
+  from {
+    opacity: 0.6;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @media (max-width: 480px) {
